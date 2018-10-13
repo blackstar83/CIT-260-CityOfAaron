@@ -28,13 +28,13 @@ public class Location implements Serializable{
         public String getDescription(){
             return description;
         }
-        public void setMapSymbol(){
+        public void setMapSymbol(String mapSymbol){
             this.mapSymbol = mapSymbol;
         }
         public String getMapSymbol(){
             return mapSymbol;
         }
-        public void setGameTips(){
+        public void setGameTips(String[] gameTips){
             this.gameTips = gameTips;
         }
         public String[] getGameTips(){

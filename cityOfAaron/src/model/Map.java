@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Arrays;
  /**
  *
  * @author apere
@@ -37,7 +38,7 @@ public class Map implements Serializable {
     @Override
     public String toString() {
         return "Map {" 
-                + "Location=" + locations 
+                + "Location=" + Arrays.toString(locations)
                 + ", Point=" + currentLocation 
                 + "}";
     }
