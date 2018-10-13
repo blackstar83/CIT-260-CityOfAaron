@@ -5,10 +5,7 @@
  */
 package model;
 
-/**
- *
- * @author apere
- */
-public class Condition {
+public enum Condition {
     
+    Good, Fair, Poor;
 }

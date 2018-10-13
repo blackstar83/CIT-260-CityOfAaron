@@ -5,10 +5,6 @@
  */
 package model;
 
-/**
- *
- * @author apere
- */
-public class ItemType {
-    
+public enum ItemType {
+    Animal, Tool, Provisions;
 }
