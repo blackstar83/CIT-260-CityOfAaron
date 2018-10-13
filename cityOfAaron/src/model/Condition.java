@@ -5,7 +5,8 @@
  */
 package model;
 
-public enum Condition {
-    
+import java.io.Serializable;
+  
+public enum Condition implements Serializable {
     Good, Fair, Poor;
 }
