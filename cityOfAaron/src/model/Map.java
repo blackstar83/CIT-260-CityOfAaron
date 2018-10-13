@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 package model;
-
-import java.io.Serializable;
 import java.util.Arrays;
+import java.io.Serializable;
  /**
  *
  * @author apere
@@ -40,7 +39,6 @@ public class Map implements Serializable {
         return "Map {" 
                 + "Location=" + Arrays.toString(locations)
                 + ", Point=" + currentLocation 
-                + "}";
+                + " }";
     }
-    
 }

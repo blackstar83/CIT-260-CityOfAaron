@@ -28,4 +28,11 @@ public class Point implements Serializable{
     public int getColumn(){
         return column;
     }
+    @Override
+    public String toString() {
+        return "Point {"
+                + " row" + row
+                + ", column" + column
+                + " }";
+    }
 }

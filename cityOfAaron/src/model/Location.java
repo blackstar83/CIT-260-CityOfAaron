@@ -40,4 +40,13 @@ public class Location implements Serializable{
         public String[] getGameTips(){
             return gameTips;
         }
-}
+        @Override
+        public String toString() {
+            return " Location {"
+                    + " name" + name
+                    + ", description" + description
+                    + ", mapSymbol" + mapSymbol
+                    + ", gameTips" + gameTips
+                    + " }";           
+        }
+    }

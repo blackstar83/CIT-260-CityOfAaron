@@ -63,5 +63,12 @@ public class CityOfAaron {
         theStorehouse.setAnimals(new Animal[]{        });       
         
         System.out.println(theStorehouse.toString());
+        
+        Point thePoint = new Point();
+        thePoint.setRow(2);
+        thePoint.setColumn(2);
+        
+        System.out.println(thePoint.toString());
+            
     }
     }
