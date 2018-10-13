@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -32,5 +33,35 @@ public class CityOfAaron {
         
         System.out.println(theGame.toString());
         
+
+        Animal theAnimal = new Animal();
+        theAnimal.setName("name");
+        theAnimal.setAge(3);
+        
+        System.out.println(theAnimal.toString());
+        
+        Author theAuthor = new Author();
+        theAuthor.setName("Name");
+        theAuthor.setTitle("Title");
+        
+        System.out.println(theAuthor.toString());
+        
+        Provision theProvision = new Provision();
+        theProvision.setName("Name");
+        theProvision.setPerishable(true);
+        
+        System.out.println(theProvision.toString());
+        
+        InventoryItem theInventoryItem = new InventoryItem();
+        theInventoryItem.setItemType(ItemType.Tool);
+        theInventoryItem.setQuantity(10);
+        theInventoryItem.setCondition(Condition.Good);
+        
+        System.out.println(theInventoryItem.toString());
+        
+        Storehouse theStorehouse = new Storehouse();
+        theStorehouse.setAnimals(new Animal[]{        });       
+        
+        System.out.println(theStorehouse.toString());
     }
-}
+    }
