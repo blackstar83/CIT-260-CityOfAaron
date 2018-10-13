@@ -33,4 +33,12 @@ public class Provision implements Serializable{
     public void setPerishable(boolean perishable) {
         this.perishable = perishable;
     }
+    
+    @Override
+    public String toString() {
+        return "Provision {"
+                + " name=" + name
+                + ", perishable=" + perishable
+                + " }";
+    }
 }

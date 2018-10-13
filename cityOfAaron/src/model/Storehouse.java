@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.util.Arrays;
 import java.io.Serializable;
 /**
  *
@@ -50,5 +51,15 @@ public class Storehouse implements Serializable {
     
     public void setProvisions(Provision[] provisions) {
         this.provisions = provisions;
+    }
+    
+    @Override
+    public String toString() {
+        return "Storehouse {"
+                + " author=" + authors
+                + ", animal=" + animals
+                + ", inventoryItem=" + tools
+                + ", provision=" + provisions
+                + " }";
     }
 }
