@@ -6,34 +6,36 @@
 package model;
 
 import java.io.Serializable;
+
 /**
  *
  * @author gj3593
  */
 public class Author implements Serializable {
+
     private String name;
     private String title;
-    
-    public Author(){
+
+    public Author() {
         //Empty constructor for JavaBeans
     }
-    
+
     public String getName() {
-    return name;
+        return name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public String getTitle() {
         return title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
-    
+
     @Override
     public String toString() {
         return "Author {"
@@ -41,5 +43,5 @@ public class Author implements Serializable {
                 + ", title=" + title
                 + " }";
     }
- 
+
 }

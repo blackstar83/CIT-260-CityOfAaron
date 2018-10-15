@@ -6,42 +6,45 @@
 package model;
 
 import java.io.Serializable;
+
 /**
  *
  * @author gj3593
  */
-public class InventoryItem implements Serializable{
+public class InventoryItem implements Serializable {
+
     private ItemType itemType;
     private int quantity;
     private Condition condition;
-    
-    public InventoryItem(){
+
+    public InventoryItem() {
         //Empty constructor for JavaBean
     }
-    
+
     public ItemType getItemType() {
         return itemType;
     }
+
     public void setItemType(ItemType type) {
         this.itemType = itemType;
     }
-    
+
     public int getQuantity() {
         return quantity;
     }
-    
+
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
+
     public Condition getCondition() {
         return condition;
     }
-    
+
     public void setCondition(Condition condition) {
         this.condition = condition;
     }
-    
+
     @Override
     public String toString() {
         return "InventoryItem {"

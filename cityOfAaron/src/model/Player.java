@@ -11,26 +11,26 @@ import java.io.Serializable;
  *
  * @author dyazz
  */
-public class Player implements Serializable{
-    
+public class Player implements Serializable {
+
     private String name;
-    
-    public Player(){
-        
+
+    public Player() {
+
     }
-    
+
     public String getName() {
         return name;
     }
-    
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
-    
+
     @Override
-    public String toString(){
-        return "Player {" 
-                + " name=" + name 
+    public String toString() {
+        return "Player {"
+                + " name=" + name
                 + "}";
     }
 }
