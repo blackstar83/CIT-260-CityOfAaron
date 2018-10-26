@@ -14,7 +14,7 @@ public class WheatControl {
      * @param acresPlanted
      * @return The random number
      */
-public static int caclculateHarvest(int tithesPercent, int acresPlanted) {
+    public static int caclculateHarvest(int tithesPercent, int acresPlanted) {
         int low = 0, high = 0;
         if (acresPlanted < 0) {
             return -1;
@@ -30,16 +30,16 @@ public static int caclculateHarvest(int tithesPercent, int acresPlanted) {
 
         if (tithesPercent >= 8 && tithesPercent <= 12) {
 
-             low = 2;
-             high = 4;
+            low = 2;
+            high = 4;
         }
 
         if (tithesPercent > 12) {
 
-             low = 2;
-             high = 5;
+            low = 2;
+            high = 5;
         }
-        
+
         int yield = GameControl.getRandomNumber(low, high);
         return yield * acresPlanted;
     }

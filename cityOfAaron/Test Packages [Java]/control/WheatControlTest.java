@@ -17,22 +17,22 @@ import static org.junit.Assert.*;
  * @author gj3593
  */
 public class WheatControlTest {
-    
+
     public WheatControlTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -49,5 +49,5 @@ public class WheatControlTest {
         int result = WheatControl.caclculateHarvest(tithesPercent, acresPlanted);
         assertEquals(expResult, result);
     }
-    
+
 }
