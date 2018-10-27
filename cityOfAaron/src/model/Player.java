@@ -14,6 +14,9 @@ import java.io.Serializable;
 public class Player implements Serializable {
 
     private String name;
+    private String itemType;
+    private String itemNumber;
+    private String quantity;
 
     public Player() {
 
