@@ -11,7 +11,7 @@ import model.Player;
 import model.Storehouse;
 import model.Map;
 import model.*;
-
+import view.*;
 /**
  *
  * @author gj3593
@@ -24,7 +24,7 @@ public class CityOfAaron {
     public static void main(String[] args) {
         // TODO code application logic here 
 
-        Game theGame = new Game();
+        /*Game theGame = new Game();
         theGame.setThePlayer(new Player());
         theGame.setTheMap(new Map());
         theGame.setTheStorehouse(new Storehouse());
@@ -69,6 +69,11 @@ public class CityOfAaron {
         thePoint.setColumn(2);
 
         System.out.println(thePoint.toString());
+        
+        */
+        
+        StartProgamView startProgramView = new StartProgamView();
+        startProgramView.displayView();
     }
 
     // Keep copy of the current Game object in the main Class.
@@ -84,10 +89,6 @@ public class CityOfAaron {
 
     /**
      * @param args the command line arguments
-     */
- 
-
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayView();
-
+     */       
+    
 }
