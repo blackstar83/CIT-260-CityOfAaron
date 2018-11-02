@@ -30,7 +30,7 @@ public class HelpMenuView {
                 + "B. Where is the city of Aaron?\n"
                 + "C. How do I view the map?\n"
                 + "D. How do I move to another location?\n"
-                + "E. How do I display a list of animals, provisions and tools in the city storehouse?"
+                + "E. How do I display a list of animals, provisions and tools in the city storehouse?\n"
                 + "F. Back to the Main Menu.";
     }
 
