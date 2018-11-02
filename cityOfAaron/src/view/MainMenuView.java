@@ -134,6 +134,7 @@ public class MainMenuView {
     }
 
     private void startNewGame() {
+
         NewGameView view = new NewGameView();
         view.displayView();
     }
