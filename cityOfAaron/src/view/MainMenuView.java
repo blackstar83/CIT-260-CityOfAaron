@@ -140,7 +140,8 @@ public class MainMenuView {
     }
 
     private void helpMenu() {
-        System.out.println("*** helpMenu() called. You must implement the HelpMenuView this week.");
+        HelpMenuView view = new HelpMenuView();
+        view.displayView();
     }
 
     private void loadSavedGame() {
