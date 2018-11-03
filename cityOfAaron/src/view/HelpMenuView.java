@@ -3,6 +3,9 @@ package view;
 import java.util.Scanner;
 import view.*;
 
+import java.util.Scanner;
+import view.*;
+
 /**
  *
  * @author gj3593
