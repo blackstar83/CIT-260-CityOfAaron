@@ -12,6 +12,7 @@ import model.Storehouse;
 import model.Map;
 import model.*;
 import view.*;
+
 /**
  *
  * @author gj3593
@@ -70,8 +71,7 @@ public class CityOfAaron {
 
         System.out.println(thePoint.toString());
         
-        */
-        
+         */
         StartProgamView startProgramView = new StartProgamView();
         startProgramView.displayView();
     }
@@ -89,6 +89,5 @@ public class CityOfAaron {
 
     /**
      * @param args the command line arguments
-     */       
-    
+     */
 }
