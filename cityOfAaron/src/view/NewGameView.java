@@ -146,11 +146,15 @@ public class NewGameView {
 
         System.out.println();
         System.out.println("Welcome to the game, " + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n"
-                + "Next week we will have a GameMenuView that you will see. But for now,\n"
-                + "we're just going to send you back to the Main Menu.\n");
+                + "The Current Annual Report will be displayed here.\n"
+                + "\n"
+                + "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+                +"Pellentesque maximus orci et tellus ultricies, consectetur auctor nibh euismod.\n"
+                +"Donec vehicula mauris eget libero molestie, nec viverra diam egestas.\n"
+                +"Fusce condimentum sem sed dolor porttitor, pellentesque finibus nisi iaculis.\n");
 
         // Once the GameMenuView is created, we will call it here.
-        // GameMenuView gameMenu = new GameMenuView();
-        // gameMenu.displayView();
+         GameMenuView gameMenu = new GameMenuView();
+         gameMenu.displayView();
     }
 }

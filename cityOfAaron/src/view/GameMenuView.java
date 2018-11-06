@@ -1,13 +1,13 @@
-
 package view;
 
 import java.util.Scanner;
+import view.*;
 
 /**
  *
  * @author gj3593
  */
-public class MainMenuView {
+public class GameMenuView {
 
     /**
      * The message that will be displayed by this view.
@@ -17,14 +17,17 @@ public class MainMenuView {
     /**
      * Constructor
      */
-    public MainMenuView() {
+    public GameMenuView() {
 
-        message = "Main Menu\n"
+        message = "Game Menu\n"
                 + "---------\n"
-                + "N - Start a New Game\n"
-                + "L - Load a Saved Game\n"
-                + "H - Help Menu\n"
-                + "Q - Quit\n";
+                + "A - View the map\n"
+                + "B - Move to a new location\n"
+                + "C - Manage the Crops\n"
+                + "D - Live the year\n"
+                + "E - Reports Menu\n"
+                + "F - Save Game\n"
+                + "G - Return to the Main Menu\n";
     }
 
     /**
@@ -96,17 +99,25 @@ public class MainMenuView {
     public boolean doAction(String[] inputs) {
 
         switch (inputs[0].trim().toUpperCase()) {
-            case "N":
-                startNewGame();
+            case "A":
+                viewMapView();
                 break;
-            case "L":
-                loadSavedGame();
+            case "B":
+                newLocationView();
                 break;
-            case "H":
-                helpMenu();
+            case "C":
+                manageCropsView();
                 break;
-            case "Q":
-                System.out.println("Thank you for playing. Good-bye.");
+            case "D":
+                liveYearView();
+                break;
+            case "E":
+                reportsMenuView();
+                break;
+            case "F":
+                saveGameView();
+                break;
+            case "G":
                 return false;
         }
 
@@ -129,20 +140,51 @@ public class MainMenuView {
         }
     }
 
-    private void startNewGame() {
+    private void viewMapView() {
 
-        NewGameView view = new NewGameView();
-        view.displayView();
+        //ViewMapView view = new ViewMapView();
+        //view.displayView();
+        System.out.println("*** viewMapView() called. Implementation coming soon.");
     }
 
-    private void helpMenu() {
+    private void newLocationView() {
         
-        HelpMenuView view = new HelpMenuView();
-        view.displayView();
+        //NewLocationView view = new NewLocationView();
+        //view.displayView();
+        System.out.println("*** newLocationView() called. Implementation coming soon.");
     }
 
-    private void loadSavedGame() {
+    private void manageCropsView() {
         
-        System.out.println("*** loadSavedGame() called. Implementation coming soon.");
+        //ManageCropsView view = new ManageCropsView();
+        //view.displayView();
+        System.out.println("*** manageCropsView() called. Implementation coming soon.");
+    }
+
+    private void liveYearView() {
+        
+        //LiveYearView view = new LiveYearView();
+        //view.displayView();
+        System.out.println("*** liveYearView() called. Implementation coming soon.");
+    }
+
+    private void reportsMenuView() {
+        
+        //ReportsMenuView view = new ReportsMenuView();
+        //view.displayView();
+        System.out.println("*** reportsMenuView() called. Implementation coming soon.");
+    }
+    
+    private void saveGameView() {
+        
+        //SaveGameView view = new SaveGameView();
+        //view.displayView();
+        System.out.println("*** saveGameView() called. Implementation coming soon.");
+    }
+
+    private void mainMenuView() {
+        
+        MainMenuView view = new MainMenuView();
+        view.displayView();
     }
 }

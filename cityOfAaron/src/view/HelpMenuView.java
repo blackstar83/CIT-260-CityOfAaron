@@ -1,7 +1,5 @@
 package view;
 
-import java.util.Scanner;
-import view.*;
 
 import java.util.Scanner;
 import view.*;
@@ -125,7 +123,7 @@ public class HelpMenuView {
                 break;
             case "E":
                 System.out.println("A list of animals, provisions and tools in the city storehouse can be viewed in the\n "
-                        + "Reports Menu by selecting View The Provisions In The Storehouse.");
+                        + "Reports Menu by selecting View The Provisions In The Storehouse.\n");
                 break;
             case "F":
                 return false;
@@ -150,7 +148,7 @@ public class HelpMenuView {
         }
     }
 
-    private void mainMenu() {
+    private void mainMenuView() {
 
         MainMenuView view = new MainMenuView();
         view.displayView();
