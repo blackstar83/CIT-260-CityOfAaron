@@ -170,9 +170,9 @@ public class GameMenuView {
 
     private void reportsMenuView() {
         
-        //ReportsMenuView view = new ReportsMenuView();
-        //view.displayView();
-        System.out.println("*** reportsMenuView() called. Implementation coming soon.");
+        ReportsMenuView view = new ReportsMenuView();
+        view.displayView();
+        //System.out.println("*** reportsMenuView() called. Implementation coming soon.");
     }
     
     private void saveGameView() {
