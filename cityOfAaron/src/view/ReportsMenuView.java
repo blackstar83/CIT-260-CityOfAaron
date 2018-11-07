@@ -94,7 +94,7 @@ public class ReportsMenuView {
         if (inputs[0].equals("Yes")) {
 
             getUserInput("Enter the name of the file you want to save.", false);
-            System.out.println("File saved implementation coming soon...");
+            System.out.println("File Saved implementation coming soon...");
 
         } else if (inputs[0].equals("No")) {
 
