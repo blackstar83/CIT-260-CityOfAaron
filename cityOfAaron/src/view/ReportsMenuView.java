@@ -93,12 +93,11 @@ public class ReportsMenuView {
 
         if (inputs[0].equals("Yes")) {
 
-            System.out.println("Enter the name of the file you want to save.");
+            getUserInput("Enter the name of the file you want to save.", false);
+            System.out.println("File saved implementation coming soon...");
 
-        }
-        
-        else if (inputs[0].equals("No")) {
-            
+        } else if (inputs[0].equals("No")) {
+
         }
 
         return inputs;
@@ -170,15 +169,4 @@ public class ReportsMenuView {
 
         System.out.println("*** viewAuthors() called. Implementation coming soon.\n");
     }
-
-    //protected void getUserInput() {
-    //Scanner input = new Scanner(System.in);
-    //System.out.println("Do you want to save the report? Yes or No");
-    // String saveInput = input.nextLine();
-    //if (saveInput.equals("Yes") || saveInput.equals("yes")) {
-    //System.out.println("Enter the name of the file you want to save.");
-    //String fileName = input.nextLine();
-    //System.out.println("*** Save File Implementation coming soon.");
-    // } else if (saveInput.equals("No") || saveInput.equals("no")) {
-    //}
 }
