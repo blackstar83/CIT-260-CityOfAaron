@@ -177,9 +177,9 @@ public class GameMenuView {
     
     private void saveGameView() {
         
-        //SaveGameView view = new SaveGameView();
-        //view.displayView();
-        System.out.println("*** saveGameView() called. Implementation coming soon.");
+        SaveGameView view = new SaveGameView();
+        view.displayView();
+        //System.out.println("*** saveGameView() called. Implementation coming soon.");
     }
 
     private void mainMenuView() {
