@@ -1,4 +1,3 @@
-
 package view;
 
 import java.util.Scanner;
@@ -9,7 +8,6 @@ import view.*;
  * @author gj3593
  */
 public class ReportsMenuView {
-    
 
     /**
      * The message that will be displayed by this view.
@@ -100,15 +98,19 @@ public class ReportsMenuView {
         switch (inputs[0].trim().toUpperCase()) {
             case "A":
                 viewAnimals();
+                saveReports();
                 break;
             case "B":
                 viewTools();
+                saveReports();
                 break;
             case "C":
                 viewProvisions();
+                saveReports();
                 break;
             case "D":
                 viewAuthors();
+                saveReports();
                 break;
         }
 
@@ -135,27 +137,43 @@ public class ReportsMenuView {
 
         System.out.println("*** viewAnimals() called. Implementation coming soon.");
     }
-    
+
     private void viewTools() {
-        
+
         System.out.println("*** viewTools() called. Implementation coming soon.");
     }
-    
+
     private void viewProvisions() {
-        
+
         System.out.println("*** viewProvisions() called. Implementation coming soon.");
     }
-    
+
     private void viewAuthors() {
-        
+
         System.out.println("*** viewAuthors() called. Implementation coming soon.");
     }
 
+    private void saveReports() {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Do you want to save the report? Yes or No");
+        String saveInput = input.nextLine();
+
+        if (saveInput.equals("Yes") || saveInput.equals("yes")) {
+
+            System.out.println("Enter the name of the file you want to save.");
+            String fileName = input.nextLine();
+
+            System.out.println("*** Save File Implementation coming soon.");
+
+        } else if (saveInput.equals("No") || saveInput.equals("no")) {
+        }
+    }
 
     private void mainMenuView() {
-        
+
         MainMenuView view = new MainMenuView();
         view.displayView();
     }
-    
+
 }
