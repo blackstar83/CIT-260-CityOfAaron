@@ -86,6 +86,24 @@ public class ReportsMenuView {
         return inputs;
     }
 
+    public String[] saveReport() {
+
+        String[] inputs = new String[1];
+        inputs[0] = getUserInput("Do you want to save the report? Yes or No");
+
+        if (inputs[0].equals("Yes")) {
+
+            System.out.println("Enter the name of the file you want to save.");
+
+        }
+        
+        else if (inputs[0].equals("No")) {
+            
+        }
+
+        return inputs;
+    }
+
     /**
      * Perform the action indicated by the user's input.
      *
@@ -98,23 +116,23 @@ public class ReportsMenuView {
         switch (inputs[0].trim().toUpperCase()) {
             case "A":
                 viewAnimals();
-                saveReports();
+                saveReport();
                 break;
             case "B":
                 viewTools();
-                saveReports();
+                saveReport();
                 break;
             case "C":
                 viewProvisions();
-                saveReports();
+                saveReport();
                 break;
             case "D":
                 viewAuthors();
-                saveReports();
+                saveReport();
                 break;
         }
 
-        return true;
+        return false;
     }
 
     /**
@@ -135,45 +153,32 @@ public class ReportsMenuView {
 
     private void viewAnimals() {
 
-        System.out.println("*** viewAnimals() called. Implementation coming soon.");
+        System.out.println("*** viewAnimals() called. Implementation coming soon.\n");
     }
 
     private void viewTools() {
 
-        System.out.println("*** viewTools() called. Implementation coming soon.");
+        System.out.println("*** viewTools() called. Implementation coming soon.\n");
     }
 
     private void viewProvisions() {
 
-        System.out.println("*** viewProvisions() called. Implementation coming soon.");
+        System.out.println("*** viewProvisions() called. Implementation coming soon.\n");
     }
 
     private void viewAuthors() {
 
-        System.out.println("*** viewAuthors() called. Implementation coming soon.");
+        System.out.println("*** viewAuthors() called. Implementation coming soon.\n");
     }
 
-    private void saveReports() {
-
-        Scanner input = new Scanner(System.in);
-        System.out.println("Do you want to save the report? Yes or No");
-        String saveInput = input.nextLine();
-
-        if (saveInput.equals("Yes") || saveInput.equals("yes")) {
-
-            System.out.println("Enter the name of the file you want to save.");
-            String fileName = input.nextLine();
-
-            System.out.println("*** Save File Implementation coming soon.");
-
-        } else if (saveInput.equals("No") || saveInput.equals("no")) {
-        }
-    }
-
-    private void mainMenuView() {
-
-        MainMenuView view = new MainMenuView();
-        view.displayView();
-    }
-
+    //protected void getUserInput() {
+    //Scanner input = new Scanner(System.in);
+    //System.out.println("Do you want to save the report? Yes or No");
+    // String saveInput = input.nextLine();
+    //if (saveInput.equals("Yes") || saveInput.equals("yes")) {
+    //System.out.println("Enter the name of the file you want to save.");
+    //String fileName = input.nextLine();
+    //System.out.println("*** Save File Implementation coming soon.");
+    // } else if (saveInput.equals("No") || saveInput.equals("no")) {
+    //}
 }
