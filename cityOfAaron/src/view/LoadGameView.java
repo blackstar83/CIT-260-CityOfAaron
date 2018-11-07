@@ -1,32 +1,23 @@
 package view;
 
-import java.util.Scanner;
-
+import java.util.Scanner;        
 /**
  *
- * @author gj3593
+ * @author apere
  */
-public class MainMenuView {
 
-    /**
-     * The message that will be displayed by this view.
-     */
+public class LoadGameView {
+    
     protected String message;
-
-    /**
-     * Constructor
-     */
-    public MainMenuView() {
-
-        message = "Main Menu\n"
-                + "---------\n"
-                + "N - Start a New Game\n"
-                + "L - Load Game\n"
-                + "H - Help Menu\n"
-                + "Q - Quit\n";
+   
+    public LoadGameView() {
+        
+        message = "Load Game\n"
+                + " N - Load New Game\n" 
+                + " S - Load Saved Game\n" 
+                + " Q - Quit\n";
     }
-
-    /**
+     /**
      * Get the user's input. Keep prompting them until they enter a value.
      *
      * @param prompt
@@ -92,30 +83,40 @@ public class MainMenuView {
      * @return true if the view should repeat itself, and false if the view
      * should exit and return to the previous view.
      */
-    public boolean doAction(String[] inputs) {
+        public boolean doAction(String[] inputs) {
 
         switch (inputs[0].trim().toUpperCase()) {
+            // If option 1, call loadGame()
             case "N":
-                startNewGame();
+                loadNewGame();
                 break;
-            case "L":
-                loadGameView();
-                break;
-            case "H":
-                helpMenu();
-                break;
+            case "S":
+                loadSavedGame();
+                break;    
             case "Q":
-                System.out.println("Thank you for playing. Good-bye.");
+                System.out.println("Exit Load Game. Good-bye.");
                 return false;
         }
 
         return true;
     }
+    
+    public void loadGameMenu() {
+        boolean keepGoing = true;
 
-    /**
-     * Control this view's display/prompt/action loop until the user chooses and
-     * action that causes this view to close.
-     */
+        while (keepGoing == true) {
+
+            System.out.println(message);
+            String[] inputs = getInputs();
+            keepGoing = doAction(inputs);
+        }
+}
+
+  private void loadNewGame() {
+
+        LoadGameView view = new LoadGameView();
+        System.out.println(" Implementation coming soon.");
+    }
     public void displayView() {
 
         boolean keepGoing = true;
@@ -128,21 +129,9 @@ public class MainMenuView {
         }
     }
 
-    private void startNewGame() {
-
-        NewGameView view = new NewGameView();
-        view.displayView();
-    }
-
-    private void helpMenu() {
-        
-        HelpMenuView view = new HelpMenuView();
-        view.displayView();
-    }
-
-    private void loadGameView() {
-        
-        LoadGameView view = new LoadGameView();
-        view.displayView();
+    private void loadSavedGame() {
+         //LoadGameView view = new LoadGameView();
+         //view.displayView();
+         System.out.println("Implementation coming soon.");
     }
 }
