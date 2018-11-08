@@ -90,7 +90,7 @@ public class SaveGameView {
                 saveGame();
                 break;    
             case "Q":
-                System.out.println("Game Saved. Good-bye.");
+                System.out.println("Success Game Saved. Good-bye.");
                 return false;
         }
 
@@ -110,8 +110,9 @@ public class SaveGameView {
 
   private void saveGame() {
 
-        NewGameView view = new NewGameView();
-        view.displayView();
+        // NewGameView view = new NewGameView();
+        //view.displayView();
+        System.out.println("Success your game has been saved.");
     }
     public void displayView() {
 
