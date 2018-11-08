@@ -27,7 +27,9 @@ public class GameMenuView {
                 + "D - Live the year\n"
                 + "E - Reports Menu\n"
                 + "F - Save Game\n"
-                + "G - Return to the Main Menu\n";
+                + "G - Buy Land\n"
+                + "H - Sell Land\n"
+                + "I - Return to the Main Menu\n";
     }
 
     /**
@@ -118,6 +120,12 @@ public class GameMenuView {
                 saveGameView();
                 break;
             case "G":
+                buyLandView();
+                break;
+            case "H":
+                sellLandView();
+                break;
+            case "I":
                 return false;
         }
 
@@ -182,7 +190,20 @@ public class GameMenuView {
         //System.out.println("*** saveGameView() called. Implementation coming soon.");
     }
     
-         
+     private void buyLandView() {
+        
+        buyLandView view = new buyLandView();
+        view.displayView();
+        //System.out.println("*** buyLandView() called. Implementation coming soon.");
+    }
+    
+     private void sellLandView() {
+        
+        sellLandView view = new sellLandView();
+        view.displayView();
+        //System.out.println("*** sellLandView() called. Implementation coming soon.");
+    }
+     
     private void mainMenuView() {
         
         MainMenuView view = new MainMenuView();
