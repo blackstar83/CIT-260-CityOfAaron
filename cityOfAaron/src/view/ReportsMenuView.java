@@ -91,7 +91,7 @@ public class ReportsMenuView {
         String[] inputs = new String[1];
         inputs[0] = getUserInput("Do you want to save the report? Yes or No");
 
-        if (inputs[0].equals("Yes")) {
+        if (inputs[0].equalsIgnoreCase("Yes")) {
 
             getUserInput("Enter the name of the file you want to save.", false);
             System.out.println("File Saved implementation coming soon...");
