@@ -33,6 +33,10 @@ public class CityOfAaron {
 
         StartProgamView startProgramView = new StartProgamView();
         startProgramView.displayView();
+        
+        NewGameView newGameView = new NewGameView();
+        newGameView.displayView();
+        
     }
 
 }
