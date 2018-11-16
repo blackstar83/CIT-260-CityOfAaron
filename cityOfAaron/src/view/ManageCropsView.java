@@ -60,13 +60,13 @@ public class ManageCropsView extends ViewBase {
                 sellLandView();
                 break;
             case "C":
-                //Feed the people method will go here
+                feedThePeopleView();
                 break;
             case "D":
-                //Plant crops method will go here
+                plantCropsView();
                 break;
             case "E":
-                //Pay tithes and offerings method will go here
+                payTithesView();
                 break;
             case "F":
                 return false;
@@ -89,6 +89,23 @@ public class ManageCropsView extends ViewBase {
         //System.out.println("*** sellLandView() called. Implementation coming soon.");
     }
     
+    private void feedThePeopleView() {
+        FeedThePeopleView view = new FeedThePeopleView();
+        view.displayView();
+        //System.out.println("*** sellLandView() called. Implementation coming soon.");
+    }
+    
+    private void plantCropsView() {
+        PlantCropsView view = new PlantCropsView();
+        view.displayView();
+        //System.out.println("*** sellLandView() called. Implementation coming soon.");
+    }
+    
+    private void payTithesView() {
+        PayTithesView view = new PayTithesView();
+        view.displayView();
+        //System.out.println("*** sellLandView() called. Implementation coming soon.");
+    }
     /**
      * All your new methods will go here.
      */
