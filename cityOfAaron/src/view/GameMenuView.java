@@ -95,9 +95,9 @@ public class GameMenuView extends ViewBase {
 
     private void manageCropsView() {
 
-        //ManageCropsView view = new ManageCropsView();
-        //view.displayView();
-        System.out.println("*** manageCropsView() called. Implementation coming soon.");
+        ManageCropsView view = new ManageCropsView();
+        view.displayView();
+        //System.out.println("*** manageCropsView() called. Implementation coming soon.");
     }
 
     private void liveYearView() {
