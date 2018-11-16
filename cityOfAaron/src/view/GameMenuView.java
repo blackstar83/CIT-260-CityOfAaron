@@ -26,9 +26,7 @@ public class GameMenuView extends ViewBase {
                 + "D - Live the year\n"
                 + "E - Reports Menu\n"
                 + "F - Save Game\n"
-                + "G - Buy Land\n"
-                + "H - Sell Land\n"
-                + "I - Return to the Main Menu\n";
+                + "G - Return to the Main Menu\n";
     }
 
     /**
@@ -75,12 +73,6 @@ public class GameMenuView extends ViewBase {
                 saveGameView();
                 break;
             case "G":
-                buyLandView();
-                break;
-            case "H":
-                sellLandView();
-                break;
-            case "I":
                 return false;
         }
 
@@ -129,23 +121,4 @@ public class GameMenuView extends ViewBase {
         //System.out.println("*** saveGameView() called. Implementation coming soon.");
     }
 
-    private void buyLandView() {
-
-        BuyLandView view = new BuyLandView();
-        view.displayView();
-        //System.out.println("*** buyLandView() called. Implementation coming soon.");
-    }
-
-    private void sellLandView() {
-
-        SellLandView view = new SellLandView();
-        view.displayView();
-        //System.out.println("*** sellLandView() called. Implementation coming soon.");
-    }
-
-    private void mainMenuView() {
-
-        MainMenuView view = new MainMenuView();
-        view.displayView();
-    }
 }
