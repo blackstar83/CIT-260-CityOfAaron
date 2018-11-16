@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package view;
+
 import java.util.Scanner;
+
 /**
  *
  * @author apere
@@ -13,17 +15,12 @@ public class PlantCropsView extends ViewBase {
 
     public PlantCropsView() {
 
-      
-
     }
-    
-    
+
     @Override
-    protected String getMessage(){
+    protected String getMessage() {
         return "Plant some crops!";
     }
-
-    
 
     /**
      * Get the set of inputs from the user.
@@ -37,7 +34,6 @@ public class PlantCropsView extends ViewBase {
 
         inputs[0] = getUserInput("How many acres of land do you want to plant?");
 
-       
         return inputs;
     }
 
@@ -55,10 +51,9 @@ public class PlantCropsView extends ViewBase {
         System.out.println("This will be coming soon, back to the Manage Crops Menu!!");
         return false;
     }
+
     private boolean someActionHandler() {
-       
 
         return true;
     }
 }
-

@@ -58,4 +58,3 @@ public class PayTithesView extends ViewBase {
         return true;
     }
 }
-
