@@ -71,7 +71,7 @@ public class NewGameView extends ViewBase {
     private void createAndStartGame(String playerName) {
 
         // Eventuallu, we will do this:
-        // Game game = GameControl.createNewGame(playerNmae);
+        // Game game = GameControl.createNewGame(playerName);
         //
         // but for this week, we'll just do this...
         Player player = new Player();

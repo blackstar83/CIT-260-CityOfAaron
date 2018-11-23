@@ -60,13 +60,10 @@ public class LoadGameView extends ViewBase {
         return true;
     }
 
-    public void loadGameMenu() {
+   /* public void loadGameMenu() {
         boolean keepGoing = true;
 
-        while (keepGoing == true) {
-
-        }
-    }
+    }*/
 
     private void loadNewGame() {
 

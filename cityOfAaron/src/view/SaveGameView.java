@@ -56,14 +56,6 @@ public class SaveGameView extends ViewBase {
         return true;
     }
 
-    public void saveGameMenu() {
-        boolean keepGoing = true;
-
-        while (keepGoing == true) {
-
-        }
-    }
-
     private void saveGame() {
 
         // NewGameView view = new NewGameView();
