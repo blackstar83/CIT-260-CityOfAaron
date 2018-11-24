@@ -35,13 +35,10 @@ public class SellLandView extends ViewBase {
     @Override
     public String[] getInputs() {
 
-        // Declare the array to have the number of elements you intend to get 
-        // from the user.
         String[] inputs = new String[1];
 
         inputs[0] = getUserInput("Change this text to prompt the user for the input.");
 
-        // Repeat for each input you need, putting it into its proper slot in the array.
         return inputs;
     }
 
@@ -66,6 +63,6 @@ public class SellLandView extends ViewBase {
     }
 
     private void sellLand() {
-        System.out.println("*** sellLand() called. Implementation coming soon.\n");
+        System.out.println(" Implementation coming soon.\n");
     }
 }

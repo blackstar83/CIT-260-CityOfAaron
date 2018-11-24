@@ -48,7 +48,7 @@ public class PayTithesView extends ViewBase {
     public boolean doAction(String[] inputs) {
 
         someActionHandler();
-        System.out.println("This will be coming soon, back to the Manage Crops Menu!!");
+        System.out.println("Implementation coming soon, back to the Manage Crops Menu!!");
         //coming soon. This will be changed back to true
         return false;
     }

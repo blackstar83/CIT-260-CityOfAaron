@@ -7,62 +7,43 @@ public class GameControl {
 
     private static Random randomGenerator = new Random();
 
-    /**
-     * Protected setter for tests to inject a mock random object.
-     *
-     * @param random
-     */
+    // create random number object for testing
     protected static void setRandomGenerator(Random random) {
         randomGenerator = random;
     }
 
-    /**
-     * Generates a random integer between lowValue and highValue, inclusive.
-     * <ul>Requirements:
-     * <li>lowValue and highValue must be positive integers (&gt;=0) (return
-     * -1)</li>
-     * <li>highValue must be greater than lowValue (return -2)</li>
-     * <li>highValue cannot be equal to the maximum value for integers (return
-     * -3)</li>
-     * </ul>
-     *
-     * @param lowValue
-     * @param highValue
-     * @return The random number
-     */
-    public static int getRandomNumber(int lowValue, int highValue) {
+    public static int getRandomNumber(int lowNumber, int highNumber) {
 
-        // if low < 0 or high < 0 the return -1
-        if (lowValue < 0 || highValue < 0) {
+        if (lowNumber < 0 || highNumber < 0) {
             return -1;
         }
-
-        // if high <= low then return -2
-        if (highValue <= lowValue) {
+        //return -2
+        if (highNumber <= lowNumber) {
             return -2;
         }
 
-        // if high is the maximum value for integers, then return -3
-        if (highValue == Integer.MAX_VALUE) {
+        // return -3
+        if (highNumber == Integer.MAX_VALUE) {
             return -3;
         }
-        // calculate the size of the range; add one so Random() includes high 
-        int range = (highValue - lowValue) + 1;
 
-        // return low and random(range size)
-        return lowValue + randomGenerator.nextInt(range);
+        int range = (highNumber - lowNumber) + 1;
+        
+        return lowNumber + randomGenerator.nextInt(range);
+
     }
 
     public static String loadGameFromFile(String filename) {
-        // place holder til created
+     
         String name = filename;
 
         return name;
+
     }
 
     public static boolean gameShouldEnd(int mortalityRate) {
 
-        if (mortalityRate > 0) {
+        if (mortalityRate > 50) {
             return true;
         }
         return false;
@@ -76,7 +57,7 @@ public class GameControl {
     }
 
     public static void saveGameToFile(Game game, String filename) {
-        //stub function that will be implamented later
+
     }
 
     public static void saveReportToFile(String[] filename) {
@@ -85,12 +66,13 @@ public class GameControl {
 
     public static Game createNewGame(String playerName) {
         
-      Player player = new Player();
-      player.setName(playerName);
-      
+
+        Player player = new Player();
+        player.setName(playerName);
+
         Game game = new Game();
         game.setThePlayer(player);
-      
+
         game.setCurrentPopulation(100);
         game.setAcresOwned(1000);
         game.setWheatInStorage(2700);
@@ -99,5 +81,5 @@ public class GameControl {
         game.setTheMap(theMap);
         
         return game;
-}
-}
+    }
+    }
