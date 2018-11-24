@@ -45,6 +45,5 @@ public class Map implements Serializable {
     }
 
     public void setCurrentLocation(Point point) {
-        throw new UnsupportedOperationException("Not supported yet."); 
     }
 }

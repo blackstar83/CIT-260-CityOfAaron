@@ -84,41 +84,20 @@ public class GameControl {
     }
 
     public static Game createNewGame(String playerName) {
-
-        Player player = new Player();
-        player.setName(playerName);
-
+        
+      Player player = new Player();
+      player.setName(playerName);
+      
         Game game = new Game();
         game.setThePlayer(player);
-
+      
         game.setCurrentPopulation(100);
         game.setAcresOwned(1000);
         game.setWheatInStorage(2700);
 
         Map theMap = MapControl.createMap();
         game.setTheMap(theMap);
-
-        Storehouse storehouse = new Storehouse();
-        Author[] author = {
-            new Author("Gleyn Juarez", "Java Programmer"),
-            new Author("Darrel Yazzie", "Java Programmer"),
-            new Author("Arturo Perez", "Java Programmer")
-        };
-        storehouse.setAuthors(author);
-
-        //call createTools() to create a tools array and set it in the storehouse
-        InventoryItem[] tools = StorehouseControl.createTools();
-        storehouse.setTools(tools);
-
-        Animal[] animals = StorehouseControl.createAnimals();
-        storehouse.setAnimals(animals);
-
-        Provision[] provision = StorehouseControl.createProvisions();
-        storehouse.setProvisions(provision);
-
-        game.setTheStorehouse(storehouse);
-
+        
         return game;
-
-    }
+}
 }

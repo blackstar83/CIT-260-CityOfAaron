@@ -3,7 +3,6 @@ package view;
 import java.util.Scanner;
 import view.*;
 import control.GameControl;
-import view.ReportsMenuView;
 
 /**
  *
