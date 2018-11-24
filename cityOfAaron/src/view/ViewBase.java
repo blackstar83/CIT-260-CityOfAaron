@@ -114,24 +114,24 @@ public abstract class ViewBase implements View {
             // do nothing
         }
     }
-    
-    protected static int stringToInt (String[] inputs) {
-        
-         boolean inputValid = false;
-         int stringToNum = 0;
 
-            try {
-                stringToNum = Integer.parseInt(inputs[0]);
-                if (stringToNum < 0) {
+    protected static int stringToInt(String[] inputs) {
+
+        boolean inputValid = false;
+        int stringToNum = 0;
+
+        try {
+            stringToNum = Integer.parseInt(inputs[0]);
+            if (stringToNum < 0) {
                 System.out.println("Please enter a positive number.");
-                } else {
+            } else {
                 inputValid = true;
-                }
-            } catch(NumberFormatException ex) {
-                System.out.println("Please enter a number.");
             }
-     
-        return stringToNum;    
+        } catch (NumberFormatException ex) {
+            System.out.println("Please enter a number.");
+        }
+
+        return stringToNum;
     }
-    
+
 }

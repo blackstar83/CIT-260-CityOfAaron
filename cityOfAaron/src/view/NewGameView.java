@@ -1,9 +1,7 @@
 package view;
 
 import cityofaaron.CityOfAaron;
-import model.Player;
-import model.Game;
-import java.util.Scanner;
+import model.*;
 
 /**
  *
