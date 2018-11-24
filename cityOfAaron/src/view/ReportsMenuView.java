@@ -1,111 +1,111 @@
 package view;
 
-import java.util.Scanner;
-import view.*;
+
+import cityofaaron.CityOfAaron;
+import model.Game;
+import model.InventoryItem;
+import model.Animal;
+import model.Provision;
+import model.Storehouse;
+import model.Author;
+import view.ReportsMenuView;
 
 /**
  *
  * @author gj3593
  */
 public class ReportsMenuView extends ViewBase {
+      
 
-    /**
-     * Constructor
-     */
-    public ReportsMenuView() {
-
-    }
+    
+   public ReportsMenuView(){
+       
+   } 
 
     @Override
-    protected String getMessage() {
-        return "Reports Menu\n"
-                + "---------\n"
+   protected String getMessage() {
+        return "WELCOME TO: REPORTS MENU.\n"
                 + "A - View the animals in the storehouse\n"
-                + "B - View the tools in the storehouse\n"
-                + "C - View the provisions in teh storehouse\n"
-                + "D - Viewthe authors of this game\n";
+                + "T - View the tools in the storehouse\n"
+                + "P - View the provisions in the storehouse\n"
+                + "G - View the authors of this game\n"
+                + "Q - Back to Game Menu\n";
     }
-
-    /**
-     * Get the set of inputs from the user.
-     *
-     * @return
-     */
-    @Override
+   
+   @Override
     public String[] getInputs() {
-
+        
+        // Declare the array to have the number of elements you intend to get 
+        // from the user.
         String[] inputs = new String[1];
-        inputs[0] = getUserInput("Your Choice:");
-
+        inputs[0] = getUserInput("Please make your selection.");
+        
+        // Repeat for each input you need, putting it into its proper slot in the array.
+        // Create a function for this to call
+        
         return inputs;
     }
-
-    public String[] saveReport() {
-
-        String[] inputs = new String[1];
-        inputs[0] = getUserInput("Do you want to save the report? Yes or No");
-
-        if (inputs[0].equalsIgnoreCase("Yes")) {
-
-            getUserInput("Enter the name of the file you want to save.", false);
-            System.out.println("File Saved implementation coming soon...");
-
-        } else if (inputs[0].equals("No")) {
-
-        }
-
-        return inputs;
-    }
-
+    
+    
     /**
      * Perform the action indicated by the user's input.
-     *
      * @param inputs
      * @return true if the view should repeat itself, and false if the view
      * should exit and return to the previous view.
      */
     @Override
-    public boolean doAction(String[] inputs) {
-
-        switch (inputs[0].trim().toUpperCase()) {
+    public boolean doAction(String[] inputs){
+  
+      
+        
+        switch (inputs[0].trim().toUpperCase()){
             case "A":
-                viewAnimals();
-                saveReport();
+                loadAnimalsInStorehouse();
                 break;
-            case "B":
-                viewTools();
-                saveReport();
+            case "T": 
+                loadToolsInStorehouse();
                 break;
-            case "C":
-                viewProvisions();
-                saveReport();
+            case "P": 
+                loadProvisionsInStorehouse();
                 break;
-            case "D":
-                viewAuthors();
-                saveReport();
+            case "G": 
+                loadAuthor();
                 break;
+            case "Q":
+                System.out.println("Back to Reports Menu...");
+                return false;
         }
+        
+        return true;
+        
 
-        return false;
     }
 
-    private void viewAnimals() {
+    
+    // Define your action handlers here. These are the methods that your doAction()
+    // method will call based on the user's input. We don't want to do a lot of 
+    // complex game stuff in our doAction() method. It will get messy very quickly.
 
-        System.out.println("*** viewAnimals() called. Implementation coming soon.\n");
+    private boolean loadAnimalsInStorehouse() {
+        System.out.println("Animals in Storehouse coming soon!");
+        return true;
+    }
+    
+    
+    private boolean loadToolsInStorehouse() {
+        System.out.println("Tools in Storehouse coming soon!");
+        return true;
+    }
+    
+    private boolean loadProvisionsInStorehouse() {
+        System.out.println("Provisons in Storehouse coming soon!");
+        return true;
+    }
+    
+    
+    private boolean loadAuthor() {
+        System.out.println("Created by");
+        return true;
     }
 
-    private void viewTools() {
-
-        System.out.println("*** viewTools() called. Implementation coming soon.\n");
-    }
-
-    private void viewProvisions() {
-
-        System.out.println("*** viewProvisions() called. Implementation coming soon.\n");
-    }
-
-    private void viewAuthors() {
-
-        System.out.println("*** viewAuthors() called. Implementation coming soon.\n");
-    }
 }

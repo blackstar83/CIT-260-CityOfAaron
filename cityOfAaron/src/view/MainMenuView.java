@@ -81,7 +81,7 @@ public class MainMenuView extends ViewBase {
 
     private void loadGameView() {
 
-        LoadGameView view = new LoadGameView();
-        view.displayView();
+        LoadGameView loadGame = new LoadGameView();
+        loadGame.displayView();
     }
 }

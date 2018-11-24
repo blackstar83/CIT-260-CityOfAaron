@@ -8,36 +8,34 @@ import java.util.Scanner;
  */
 public abstract class ViewBase implements View {
 
-    /**
-     * Constructor
-     */
+    //constructor
     public ViewBase() {
     }
 
     /**
-     * Get the view's content. This will allow the view to have dynamic content
-     * (it can change each time the message is displayed).
+     * getting view content, this will allow the view to have dynamic content it
+     * can change each time it's displayed
      */
     protected abstract String getMessage();
 
     /**
-     * Get the set of inputs from the user.
+     * get and set input from user
      *
      * @return
      */
     protected abstract String[] getInputs();
 
     /**
-     * Perform the action indicated the user's input.
+     * perform action based on user's input
      *
      * @param inputs
      * @return true if the view should repeat itself, and false if the view
-     * should exit and return to the previous view.
+     * should exit and return to previous view
      */
     public abstract boolean doAction(String[] inputs);
 
     /**
-     * Control this view's display/prompt/action loop until the user chooses and
+     * control this view's display/prompt/action loop until user chooses an
      * action that causes this view to close.
      */
     public void displayView() {
@@ -46,8 +44,8 @@ public abstract class ViewBase implements View {
 
         while (keepGoing == true) {
 
-            //get the message that should be displayed.
-            //Only print it if it is non-null
+            // get message that should be displayed
+            // only print if it is non-null
             String message = getMessage();
             if (message != null) {
                 System.out.println(getMessage());
@@ -59,11 +57,11 @@ public abstract class ViewBase implements View {
     }
 
     /**
-     * Get the user's input. Keep prompting them until the enter a value.
+     * Get the user's input. Keep prompting them until they enter a value.
      *
      * @param prompt
-     * @param allowEmpty - determine whether the user can enter no value (just a
-     * return key)
+     * @param allowEmpty - determines whether the user can enter no value (just
+     * a return key)
      * @return
      */
     protected String getUserInput(String prompt, boolean allowEmpty) {
@@ -77,7 +75,7 @@ public abstract class ViewBase implements View {
             System.out.println(prompt);
             input = keyboard.nextLine();
 
-            //Make sure we avoud a null-pointer error.
+            // Make sure we avoid a null-pointer error.
             if (input == null) {
                 input = "";
             }
@@ -89,12 +87,12 @@ public abstract class ViewBase implements View {
                 inputReceived = true;
             }
         }
-        return input;
 
+        return input;
     }
 
     /**
-     * An Overloaded version of getUserInput that sets allowEmpty to false so we
+     * An overloaded version of getUserInput that sets allowEmpty to false so we
      * don't have to type it ourselves.
      *
      * @param prompt
@@ -105,7 +103,8 @@ public abstract class ViewBase implements View {
     }
 
     /**
-     * Pause the program for the specified number of milliseconds.
+     * pause the program for the specified amount of milliseconds
+     *
      * @param milliseconds
      */
     protected static void pause(int milliseconds) {
@@ -115,5 +114,24 @@ public abstract class ViewBase implements View {
             // do nothing
         }
     }
+    
+    protected static int stringToInt (String[] inputs) {
+        
+         boolean inputValid = false;
+         int stringToNum = 0;
 
+            try {
+                stringToNum = Integer.parseInt(inputs[0]);
+                if (stringToNum < 0) {
+                System.out.println("Please enter a positive number.");
+                } else {
+                inputValid = true;
+                }
+            } catch(NumberFormatException ex) {
+                System.out.println("Please enter a number.");
+            }
+     
+        return stringToNum;    
+    }
+    
 }

@@ -43,4 +43,8 @@ public class Map implements Serializable {
                 + ", Point=" + currentLocation
                 + " }";
     }
+
+    public void setCurrentLocation(Point point) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
 }

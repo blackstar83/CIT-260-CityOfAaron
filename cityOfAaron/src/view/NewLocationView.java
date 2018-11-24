@@ -145,7 +145,7 @@ public class NewLocationView {
 
         return true;
     }
-        private void newLocation() {
+        private void newLocationView() {
         //newLocation view = new newLocationView();
         //view.displayView();
         System.out.println("Implementation coming soon.");

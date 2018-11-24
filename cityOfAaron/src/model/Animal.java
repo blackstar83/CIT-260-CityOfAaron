@@ -11,36 +11,32 @@ import java.io.Serializable;
  *
  * @author gj3593
  */
-public class Animal implements Serializable {
-
-    private String name;
+public class Animal extends InventoryItem implements Serializable {
     private int age;
-
+        
     public Animal() {
-        //Empty constructor for JavaBeans
+     //empty default constructor for JavaBeans  
+    }  
+    
+    public Animal(ItemType itemType, int quantity, Condition condition, String name, int age){
+        setItemType(itemType);
+        setQuantity(quantity);
+        setCondition(condition);
+        setName(name);
+        setAge(age);
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    
     public int getAge() {
         return age;
     }
-
+    
     public void setAge(int age) {
         this.age = age;
     }
 
     @Override
     public String toString() {
-        return "Animal {"
-                + " name=" + name
-                + ", age=" + age
-                + " }";
+        return String.format("Animal {%s, age=%s}", 
+                super.toString(), age);
     }
 }

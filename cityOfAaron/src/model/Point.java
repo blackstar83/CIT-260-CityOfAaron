@@ -19,6 +19,10 @@ public class Point implements Serializable {
     public Point() {
     }
 
+    public Point(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
     public void setRow(int row) {
         this.row = row;
     }

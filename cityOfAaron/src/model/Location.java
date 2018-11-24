@@ -7,7 +7,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Location implements Serializable {
+public class Location extends Map implements Serializable {
 
     private String name;
     private String description;
@@ -17,6 +17,13 @@ public class Location implements Serializable {
     public Location() {
     }
 
+    public Location(String mapSymbol, String name, String description, String[] tips){
+        setMapSymbol (mapSymbol);
+        setName(name);
+        setDescription(description);
+        setGameTips(tips);
+}
+    
     public void setName(String name) {
         this.name = name;
     }

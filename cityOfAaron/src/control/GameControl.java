@@ -1,8 +1,18 @@
 package control;
 
 import java.util.Random;
-
+import cityofaaron.CityOfAaron;
 import model.Game;
+import model.Player;
+import model.Map;
+import model.Author;
+import model.Condition;
+import model.InventoryItem;
+import model.ItemType;
+import model.Storehouse;
+import model.Animal;
+import model.Provision;
+
 
 public class GameControl {
 
@@ -47,10 +57,79 @@ public class GameControl {
         if (highValue == Integer.MAX_VALUE) {
             return -3;
         }
-        // calculate the size of the range; add one so Random() includes high value
+        // calculate the size of the range; add one so Random() includes high 
         int range = (highValue - lowValue) + 1;
 
-        // return low + random(range size)
+        // return low and random(range size)
         return lowValue + randomGenerator.nextInt(range);
     }
+    public static String loadGameFromFile(String filename) {
+        // place holder til created
+        String name = filename;
+
+        return name;
+    }
+
+    public static boolean gameShouldEnd(int mortalityRate) {
+      
+        if (mortalityRate > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean gameMatures(int yearNumber) {
+        if (yearNumber > 10) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void saveGameToFile(Game game, String filename) {
+        //stub function that will be implamented later
+    }
+
+    public static void saveReportToFile(String[] filename) {
+
+    }
+
+    public static Game createNewGame(String playerName) {
+                             
+        Player player = new Player();
+        player.setName(playerName);
+               
+        Game game = new Game();
+        game.setThePlayer(player);
+
+        game.setCurrentPopulation(100);
+        game.setAcresOwned(1000);
+        game.setWheatInStorage(2700);
+                      
+        Map theMap = MapControl.createMap();
+        game.setTheMap(theMap);
+        
+        Storehouse storehouse = new Storehouse();
+        Author[] author = { 
+            new Author("Gleyn Juarez", "Java Programmer"),
+            new Author("Darrel Yazzie", "Java Programmer"),
+            new Author("Arturo Perez", "Java Programmer")        
+        };        
+        storehouse.setAuthors(author);
+        
+        //call createTools() to create a tools array and set it in the storehouse
+        InventoryItem[] tools = StorehouseControl.createTools();
+        storehouse.setTools(tools);
+        
+        Animal[] animals = StorehouseControl.createAnimals();
+        storehouse.setAnimals(animals);
+        
+        Provision[] provision = StorehouseControl.createProvisions();
+        storehouse.setProvisions(provision);
+        
+        game.setTheStorehouse(storehouse);       
+ 
+        return game;            
+
+    }
 }
+

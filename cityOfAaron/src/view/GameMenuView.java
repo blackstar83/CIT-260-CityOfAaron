@@ -2,6 +2,8 @@ package view;
 
 import java.util.Scanner;
 import view.*;
+import control.GameControl;
+import view.ReportsMenuView;
 
 /**
  *
@@ -55,7 +57,7 @@ public class GameMenuView extends ViewBase {
 
         switch (inputs[0].trim().toUpperCase()) {
             case "A":
-                viewMapView();
+                mapView();
                 break;
             case "B":
                 newLocationView();
@@ -79,18 +81,48 @@ public class GameMenuView extends ViewBase {
         return true;
     }
 
-    private void viewMapView() {
+    @Override //using this override to place getAnnualReport and gameShouldEnd inside displayView while loop.
+    public void displayView() {
 
-        //ViewMapView view = new ViewMapView();
-        //view.displayView();
-        System.out.println("*** viewMapView() called. Implementation coming soon.");
+        boolean keepGoing = true;
+
+        while (keepGoing == true) {
+            //display the annual report 
+            getAnnualReport();
+          
+            if (GameControl.gameShouldEnd(0)) {
+               
+                System.out.println("Most of your people are dead!! Try again.");
+                return;
+            } else if (GameControl.gameMatures(1)) {
+                //TODO when fully implemented, this will contain currentYear variable from annual report.
+                //TODO create end of game report showing total game statistics. Use Annual Report format but bring in stats from every year.
+                System.out.println("You Succeeded!! After 10 Years, your people are alive!!");
+                return;
+            }
+            // get message that should be displayed
+            // only print if it is non-null
+            String message = getMessage();
+            if (message != null) {
+                System.out.println(getMessage());
+            }
+            String[] inputs = getInputs();
+            keepGoing = doAction(inputs);
+        }
+    }
+    
+    private void mapView() {
+
+        MapView view = new MapView();
+        view.displayView();
+        //System.out.println("*** viewMapView() called. Implementation coming soon.");
     }
 
     private void newLocationView() {
 
-        //NewLocationView view = new NewLocationView();
-        //view.displayView();
-        System.out.println("*** newLocationView() called. Implementation coming soon.");
+        NewLocationView view = new NewLocationView();
+        view.displayView();
+        //System.out.println("*** newLocationView() called. Implementation coming soon.");
     }
 
     private void manageCropsView() {
@@ -119,6 +151,23 @@ public class GameMenuView extends ViewBase {
         SaveGameView view = new SaveGameView();
         view.displayView();
         //System.out.println("*** saveGameView() called. Implementation coming soon.");
+    }
+
+     private void getAnnualReport() {
+        
+        System.out.println("Annual Report\n"
+                + "----------------------\n"
+                + "The Year Number is 1.\n"
+                + "0 people starved.\n"
+                + "5 people moved into the city.\n"
+                + "The current population is 100.\n"
+                + "The number of acres of land owned by the city is 1000.\n"
+                + "The number of bushels per acre in this year's harvest is 3.\n"
+                + "The total number of bushels of wheat harvested is 3000.\n"
+                + "The number of bushels paid in tithes and offerings is 300.\n"
+                + "The number of bushels of wheat eaten by rats is 0.\n"
+                + "The number of bushels of wheat in store is 2700.\n");
+
     }
 
 }

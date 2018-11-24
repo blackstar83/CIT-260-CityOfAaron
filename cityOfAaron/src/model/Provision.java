@@ -11,36 +11,32 @@ import java.io.Serializable;
  *
  * @author gj3593
  */
-public class Provision implements Serializable {
-
-    private String name;
-    private boolean perishable;
-
+public class Provision extends InventoryItem implements Serializable{
+    private Boolean perishable;
+    
     public Provision() {
         //Empty constructor for JavaBeans
     }
 
-    public String getName() {
-        return name;
+    public Provision(ItemType itemType, int quantity, Condition condition, String name, boolean perishable) {
+        setItemType(itemType);
+        setQuantity(quantity);
+        setCondition(condition);
+        setName(name);
+        setPerishable(perishable);
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public boolean isPerishable() {
+    
+    public Boolean getPerishable() {
         return perishable;
     }
-
-    public void setPerishable(boolean perishable) {
+    
+    public void setPerishable(Boolean perishable) {
         this.perishable = perishable;
     }
 
-    @Override
+     @Override
     public String toString() {
-        return "Provision {"
-                + " name=" + name
-                + ", perishable=" + perishable
-                + " }";
+        return String.format("Provision {%s, perishable=%s}", 
+                super.toString(), perishable);
     }
 }

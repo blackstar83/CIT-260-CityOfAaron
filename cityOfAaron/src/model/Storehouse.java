@@ -20,17 +20,17 @@ public class Storehouse implements Serializable {
     private Provision[] provisions;
 
     public Storehouse() {
-        //Empty constructor for JavaBeans
+        //empty for default constructor for JavaBeans
     }
 
     public Author[] getAuthors() {
         return authors;
     }
-
+    
     public void setAuthors(Author[] authors) {
         this.authors = authors;
     }
-
+    
     public Animal[] getAnimals() {
         return animals;
     }
@@ -38,30 +38,30 @@ public class Storehouse implements Serializable {
     public void setAnimals(Animal[] animals) {
         this.animals = animals;
     }
-
-    public InventoryItem[] getInventoryItems() {
+    
+    public InventoryItem[] getTools() {
         return tools;
     }
-
-    public void setInventoryItems(InventoryItem[] tools) {
+    
+    public void setTools(InventoryItem[] tools) {
         this.tools = tools;
     }
-
+    
     public Provision[] getProvisions() {
         return provisions;
     }
-
+    
     public void setProvisions(Provision[] provisions) {
         this.provisions = provisions;
     }
 
     @Override
     public String toString() {
-        return "Storehouse {"
-                + " author=" + authors
-                + ", animal=" + animals
-                + ", inventoryItem=" + tools
-                + ", provision=" + provisions
+        return "Storehouse {" 
+                + " authors = " + Arrays.toString(authors) 
+                + ", animals = " + Arrays.toString(animals) 
+                + ", tools = " + Arrays.toString(tools) 
+                + ", provisions = " + Arrays.toString(provisions) 
                 + " }";
-    }
+    }   
 }
