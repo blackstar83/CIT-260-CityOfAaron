@@ -1,38 +1,38 @@
-
 package control;
 
 //import control.GameControl;
 //import java.util.Random;
 public class LossToRats {
-/**
-     * Calculate the amount of wheat in storage lost to rats, based on
-     * the percentage of tithing paid. Assume that GameControl.getRandomNumber(low, high)
-     * is available to be called.
+
+    /**
+     * Calculate the amount of wheat in storage lost to rats, based on the
+     * percentage of tithing paid. Assume that GameControl.getRandomNumber(low,
+     * high) is available to be called.
      *
      * @param tithesPercent
      * @param WheatInStorage
      * @return The random number
      */
-public static double caclculateLossToRats(int tithesPercent, int WheatInStorage) {
+    public static double caclculateLossToRats(int tithesPercent, int WheatInStorage) {
         int low = 0, high = 0;
- 
+
         if (WheatInStorage < 0) {
             return -1;
         }
         if (tithesPercent < 0 || tithesPercent > 100) {
             return -2;
         }
-     /**
-     * @param chanceOfRats
-     * @param lowValue
-     * @param highValue
-     * @param lossToRats
-     * @return The random number
-     */   
+        /**
+         * @param chanceOfRats
+         * @param lowValue
+         * @param highValue
+         * @param lossToRats
+         * @return The random number
+         */
         int chanceOfRats = GameControl.getRandomNumber(1, 100);
         int lossToRats = 0;
-        
-        if (chanceOfRats >= 30) {  
+
+        if (chanceOfRats >= 30) {
             return 0;
         }
         if (lossToRats < 8) {

@@ -12,31 +12,32 @@ import java.io.Serializable;
  * @author gj3593
  */
 public class Animal extends InventoryItem implements Serializable {
+
     private int age;
-        
+
     public Animal() {
-     //empty default constructor for JavaBeans  
-    }  
-    
-    public Animal(ItemType itemType, int quantity, Condition condition, String name, int age){
+        //empty default constructor for JavaBeans  
+    }
+
+    public Animal(ItemType itemType, int quantity, Condition condition, String name, int age) {
         setItemType(itemType);
         setQuantity(quantity);
         setCondition(condition);
         setName(name);
         setAge(age);
     }
-    
+
     public int getAge() {
         return age;
     }
-    
+
     public void setAge(int age) {
         this.age = age;
     }
 
     @Override
     public String toString() {
-        return String.format("Animal {%s, age=%s}", 
+        return String.format("Animal {%s, age=%s}",
                 super.toString(), age);
     }
 }

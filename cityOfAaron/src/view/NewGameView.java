@@ -4,7 +4,6 @@ import cityofaaron.CityOfAaron;
 import model.*;
 import control.*;
 
-
 /**
  *
  * @author gj3593
@@ -73,16 +72,16 @@ public class NewGameView extends ViewBase {
         Game game = GameControl.createNewGame(playerName);
 
         CityOfAaron.setCurrentGame(game);
-        
+
         System.out.println();
         System.out.println("Welcome: " + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n");
         //System.out.println("Welcome to the game, " + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n"
-                //+ "The Current Annual Report will be displayed here.\n"
-                //+ "\n"
-                //+ "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
-                //+ "Pellentesque maximus orci et tellus ultricies, consectetur auctor nibh euismod.\n"
-                //+ "Donec vehicula mauris eget libero molestie, nec viverra diam egestas.\n"
-                //+ "Fusce condimentum sem sed dolor porttitor, pellentesque finibus nisi iaculis.\n");
+        //+ "The Current Annual Report will be displayed here.\n"
+        //+ "\n"
+        //+ "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        //+ "Pellentesque maximus orci et tellus ultricies, consectetur auctor nibh euismod.\n"
+        //+ "Donec vehicula mauris eget libero molestie, nec viverra diam egestas.\n"
+        //+ "Fusce condimentum sem sed dolor porttitor, pellentesque finibus nisi iaculis.\n");
 
         // Once the GameMenuView is created, we will call it here.
         GameMenuView gameMenu = new GameMenuView();

@@ -10,5 +10,5 @@ package view;
  * @author gj3593
  */
 public class LiveYearView {
-    
+
 }

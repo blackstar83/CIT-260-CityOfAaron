@@ -51,4 +51,3 @@ public class FeedThePeopleView extends ViewBase {
         return true;
     }
 }
-

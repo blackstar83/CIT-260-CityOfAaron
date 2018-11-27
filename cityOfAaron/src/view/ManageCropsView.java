@@ -88,19 +88,19 @@ public class ManageCropsView extends ViewBase {
         view.displayView();
         //System.out.println("*** sellLandView() called. Implementation coming soon.");
     }
-    
+
     private void feedThePeopleView() {
         FeedThePeopleView view = new FeedThePeopleView();
         view.displayView();
         //System.out.println("*** sellLandView() called. Implementation coming soon.");
     }
-    
+
     private void plantCropsView() {
         PlantCropsView view = new PlantCropsView();
         view.displayView();
         //System.out.println("*** sellLandView() called. Implementation coming soon.");
     }
-    
+
     private void payTithesView() {
         PayTithesView view = new PayTithesView();
         view.displayView();

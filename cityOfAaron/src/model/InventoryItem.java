@@ -17,7 +17,7 @@ public class InventoryItem implements Serializable {
     private int quantity;
     private Condition condition;
     private String name;
-    
+
     public InventoryItem() {
         //Empty constructor for JavaBean
     }
@@ -28,47 +28,46 @@ public class InventoryItem implements Serializable {
         setCondition(condition);
         setName(name);
     }
-    
+
     public ItemType getItemType() {
         return itemType;
     }
-    
+
     public void setItemType(ItemType itemType) {
         this.itemType = itemType;
     }
-    
+
     public int getQuantity() {
         return quantity;
     }
-    
+
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
+
     public Condition getCondition() {
         return condition;
     }
-    
+
     public void setCondition(Condition condition) {
         this.condition = condition;
     }
-    
+
     public String getName() {
         return name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
     @Override
     public String toString() {
         return "InventoryItem {"
-            + " itemType = " + itemType
-            + ", quantity = " + quantity 
-            + ", condition = " + condition
-            + " }";        
+                + " itemType = " + itemType
+                + ", quantity = " + quantity
+                + ", condition = " + condition
+                + " }";
     }
-    
-}
 
+}

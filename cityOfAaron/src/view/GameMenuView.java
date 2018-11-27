@@ -88,12 +88,11 @@ public class GameMenuView extends ViewBase {
         while (keepGoing == true) {
             //display the annual report 
             getAnnualReport();
-          
 
             if (GameControl.gameShouldEnd(0)) {
                 System.out.println("Most of your people are dead!! Try again.");
                 return;
-                
+
             } else if (GameControl.gameMatures(1)) {
                 //TODO when fully implemented, this will contain currentYear variable from annual report.
                 //TODO create end of game report showing total game statistics. Use Annual Report format but bring in stats from every year.
@@ -110,7 +109,7 @@ public class GameMenuView extends ViewBase {
             keepGoing = doAction(inputs);
         }
     }
-    
+
     private void mapView() {
 
         MapView view = new MapView();
@@ -152,8 +151,8 @@ public class GameMenuView extends ViewBase {
         //System.out.println("*** saveGameView() called. Implementation coming soon.");
     }
 
-     private void getAnnualReport() {
-        
+    private void getAnnualReport() {
+
         System.out.println("Annual Report\n"
                 + "----------------------\n"
                 + "The Year Number is 1.\n"

@@ -18,22 +18,22 @@ import static org.junit.Assert.*;
  * @author Yazzie Family
  */
 public class PeopleControlTest {
-    
+
     public PeopleControlTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -48,5 +48,5 @@ public class PeopleControlTest {
         int result = WheatControl.caclculateHarvest(bushelsForFood, currentPopulation);
         assertEquals(expResult, result);
     }
-     
+
 }

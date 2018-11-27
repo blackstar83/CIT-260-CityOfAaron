@@ -3,7 +3,6 @@ package view;
 import model.*;
 import cityofaaron.CityOfAaron;
 
-
 /**
  *
  * @author gj3593
@@ -82,8 +81,8 @@ public class ReportsMenuView extends ViewBase {
         Game game = CityOfAaron.getCurrentGame();
         Storehouse storehouse = game.getTheStorehouse();
         InventoryItem[] tools = storehouse.getTools();
-        
-        if(tools == null) {
+
+        if (tools == null) {
             System.out.println("No tools available.");
         } else {
             String toolName;
@@ -95,7 +94,7 @@ public class ReportsMenuView extends ViewBase {
             }
             long total = 0;
             for (InventoryItem tool : tools) {
-                toolCount = tool.getQuantity(); 
+                toolCount = tool.getQuantity();
                 total += toolCount;
             }
             System.out.println("There is a total of " + total + " tools in the Storehouse.");
@@ -112,5 +111,5 @@ public class ReportsMenuView extends ViewBase {
         System.out.println("Created by");
         return true;
     }
-    
+
 }

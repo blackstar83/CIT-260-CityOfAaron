@@ -17,13 +17,13 @@ public class Location extends Map implements Serializable {
     public Location() {
     }
 
-    public Location(String mapSymbol, String name, String description, String[] tips){
-        setMapSymbol (mapSymbol);
+    public Location(String mapSymbol, String name, String description, String[] tips) {
+        setMapSymbol(mapSymbol);
         setName(name);
         setDescription(description);
         setGameTips(tips);
-}
-    
+    }
+
     public void setName(String name) {
         this.name = name;
     }

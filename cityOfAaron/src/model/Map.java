@@ -31,7 +31,7 @@ public class Map implements Serializable {
     public Point getcurrentLocation() {
         return currentLocation;
     }
-    
+
     public void setCurrentLocation(Point point) {
     }
 

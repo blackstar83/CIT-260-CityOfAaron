@@ -53,7 +53,8 @@ public class WheatControlTest {
         int result = WheatControl.caclculateHarvest(tithesPercent, acresPlanted);
         assertEquals(expResult, result);
     }
- @Test
+
+    @Test
     public void testCaclculateHarvest2() {
         Random randomGenerator = new Random();
         System.out.println("caclculateHarvest");
@@ -63,7 +64,8 @@ public class WheatControlTest {
         int result = WheatControl.caclculateHarvest(tithesPercent, acresPlanted);
         assertEquals(expResult, result);
     }
- @Test
+
+    @Test
     public void testCaclculateHarvest3() {
         Random randomGenerator = new Random();
         System.out.println("caclculateHarvest");

@@ -11,9 +11,10 @@ import java.io.Serializable;
  *
  * @author gj3593
  */
-public class Provision extends InventoryItem implements Serializable{
+public class Provision extends InventoryItem implements Serializable {
+
     private Boolean perishable;
-    
+
     public Provision() {
         //Empty constructor for JavaBeans
     }
@@ -25,18 +26,18 @@ public class Provision extends InventoryItem implements Serializable{
         setName(name);
         setPerishable(perishable);
     }
-    
+
     public Boolean getPerishable() {
         return perishable;
     }
-    
+
     public void setPerishable(Boolean perishable) {
         this.perishable = perishable;
     }
 
-     @Override
+    @Override
     public String toString() {
-        return String.format("Provision {%s, perishable=%s}", 
+        return String.format("Provision {%s, perishable=%s}",
                 super.toString(), perishable);
     }
 }
