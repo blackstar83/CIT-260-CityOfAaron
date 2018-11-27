@@ -72,7 +72,28 @@ public class ReportsMenuView extends ViewBase {
     // method will call based on the user's input. We don't want to do a lot of 
     // complex game stuff in our doAction() method. It will get messy very quickly.
     private boolean animalsInStorehouse() {
-        System.out.println("Animals in Storehouse coming soon!");
+        System.out.println("These are the available animals in the storehouse.");
+        Game game = CityOfAaron.getCurrentGame();
+        Storehouse storehouse = game.getTheStorehouse();
+        Animal[] animals = storehouse.getAnimals();
+
+        if (animals == null) {
+            System.out.println("No animals available.");
+        } else {
+            String animalName;
+            int animalCount;
+            for (int i = 0; i < animals.length; i++) {
+                animalName = animals[i].getName();
+                animalCount = animals[i].getQuantity();
+                System.out.println(animalCount + " " + animalName);
+            }
+            long total = 0;
+            for (Animal animal : animals) {
+                animalCount = animal.getQuantity();
+                total += animalCount;
+            }
+            System.out.println("There is a total of " + total + "animals in the Storehouse.");
+        }
         return true;
     }
 
