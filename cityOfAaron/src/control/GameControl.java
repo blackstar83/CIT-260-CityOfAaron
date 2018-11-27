@@ -2,6 +2,7 @@ package control;
 
 import java.util.Random;
 import model.*;
+import cityofaaron.CityOfAaron;
 
 public class GameControl {
 
@@ -12,24 +13,24 @@ public class GameControl {
         randomGenerator = random;
     }
 
-    public static int getRandomNumber(int lowNumber, int highNumber) {
+    public static int getRandomNumber(int min, int max) {
 
-        if (lowNumber < 0 || highNumber < 0) {
+        if (min < 0 || max < 0) {
             return -1;
         }
         //return -2
-        if (highNumber <= lowNumber) {
+        if (max <= min) {
             return -2;
         }
 
         // return -3
-        if (highNumber == Integer.MAX_VALUE) {
+        if (max == Integer.MAX_VALUE) {
             return -3;
         }
 
-        int range = (highNumber - lowNumber) + 1;
+        int range = (max - min) + 1;
         
-        return lowNumber + randomGenerator.nextInt(range);
+        return min + randomGenerator.nextInt(range);
 
     }
 
@@ -43,7 +44,7 @@ public class GameControl {
 
     public static boolean gameShouldEnd(int mortalityRate) {
 
-        if (mortalityRate > 50) {
+        if (mortalityRate > 0) {
             return true;
         }
         return false;
@@ -64,22 +65,42 @@ public class GameControl {
 
     }
 
-    public static Game createNewGame(String playerName) {
-        
-
+     public static Game createNewGame(String playerName) {
+                             
         Player player = new Player();
         player.setName(playerName);
-
+               
         Game game = new Game();
         game.setThePlayer(player);
 
         game.setCurrentPopulation(100);
         game.setAcresOwned(1000);
         game.setWheatInStorage(2700);
-
+                      
         Map theMap = MapControl.createMap();
         game.setTheMap(theMap);
         
-        return game;
+        Storehouse storehouse = new Storehouse();
+        Author[] author = { 
+            new Author("Gleyn Juarez", "Java Programmer"),
+            new Author("Darren Yazzie", "Java Programmer"),
+            new Author("Arturo Perez", "Java Programmer")        
+        };        
+        storehouse.setAuthors(author);
+        game.setTheStorehouse(storehouse);
+        
+        InventoryItem[] tools = StorehouseControl.createTools();
+        storehouse.setTools(tools);
+        
+        Animal[] animals = StorehouseControl.createAnimals();
+        storehouse.setAnimals(animals);
+        
+        Provision[] provision = StorehouseControl.createProvisions();
+        storehouse.setProvisions(provision);
+        
+        game.setTheStorehouse(storehouse);       
+ 
+        return game;      
+
     }
-    }
+}

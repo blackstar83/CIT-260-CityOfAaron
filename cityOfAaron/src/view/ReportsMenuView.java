@@ -1,6 +1,8 @@
 package view;
 
 import model.*;
+import cityofaaron.CityOfAaron;
+
 
 /**
  *
@@ -14,7 +16,7 @@ public class ReportsMenuView extends ViewBase {
 
     @Override
     protected String getMessage() {
-        return "WELCOME TO: REPORTS MENU.\n"
+        return "Welcome to: Reports Menu.\n"
                 + "A - View the animals in the storehouse\n"
                 + "T - View the tools in the storehouse\n"
                 + "P - View the provisions in the storehouse\n"
@@ -47,16 +49,16 @@ public class ReportsMenuView extends ViewBase {
 
         switch (inputs[0].trim().toUpperCase()) {
             case "A":
-                loadAnimalsInStorehouse();
+                animalsInStorehouse();
                 break;
             case "T":
-                loadToolsInStorehouse();
+                toolsInStorehouse();
                 break;
             case "P":
-                loadProvisionsInStorehouse();
+                provisionsInStorehouse();
                 break;
             case "G":
-                loadAuthor();
+                author();
                 break;
             case "Q":
                 System.out.println("Back to Reports Menu...");
@@ -70,24 +72,45 @@ public class ReportsMenuView extends ViewBase {
     // Define your action handlers here. These are the methods that your doAction()
     // method will call based on the user's input. We don't want to do a lot of 
     // complex game stuff in our doAction() method. It will get messy very quickly.
-    private boolean loadAnimalsInStorehouse() {
+    private boolean animalsInStorehouse() {
         System.out.println("Animals in Storehouse coming soon!");
         return true;
     }
 
-    private boolean loadToolsInStorehouse() {
-        System.out.println("Tools in Storehouse coming soon!");
-        return true;
+    private void toolsInStorehouse() {
+        System.out.println("These are the available tools for you to use.");
+        Game game = CityOfAaron.getCurrentGame();
+        Storehouse storehouse = game.getTheStorehouse();
+        InventoryItem[] tools = storehouse.getTools();
+        
+        if(tools == null) {
+            System.out.println("No tools available.");
+        } else {
+            String toolName;
+            int toolCount;
+            for (int i = 0; i < tools.length; i++) {
+                toolName = tools[i].getName();
+                toolCount = tools[i].getQuantity();
+                System.out.println(toolCount + " " + toolName);
+            }
+            long total = 0;
+            for (InventoryItem tool : tools) {
+                toolCount = tool.getQuantity(); 
+                total += toolCount;
+            }
+            System.out.println("There is a total of " + total + " tools in the Storehouse.");
+        }
+
     }
 
-    private boolean loadProvisionsInStorehouse() {
+    private boolean provisionsInStorehouse() {
         System.out.println("Provisons in Storehouse coming soon!");
         return true;
     }
 
-    private boolean loadAuthor() {
+    private boolean author() {
         System.out.println("Created by");
         return true;
     }
-
+    
 }

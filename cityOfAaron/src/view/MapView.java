@@ -5,10 +5,8 @@
  */
 package view;
 
-import model.Map;
-import model.Location;
+import model.*;
 import control.MapControl;
-import model.Game;
 
 /**
  *
@@ -23,89 +21,65 @@ public class MapView extends ViewBase {
     
     @Override
     protected String getMessage() {
-        return "Welcome the city of Aaron!\n"
-                + "-------------------\n"
-                + " City's Map:\n"
-                + "[W][F][R][T][G]\n"
-                + "[C][U][V][L][F]\n"
-                + "[R][T][G][C][U]\n"
-                + "[V][L][F][R][T]\n"
-                + "[G][C][U][V][W]\n"
-                + "-------------------\n"
-                + "Map's Definitions:\n"
-                + "C = Ruler's Court\n"
-                + "F = Field\n"
-                + "G = Granary\n"
-                + "L = Lamanite Lands\n"
-                + "R = River\n"
-                + "T = Temple\n"
-                + "U = Undeveloped Land\n"
-                + "V = Village\n"
-                + "W = Watchtower\n\n"
-                + "-------------------\n"
-                + "More options:\n"
-                + "M = Move to location on the map\n"
-                + "E = Leave the Map Menu\n"
-                ;
+           
+          return null;      
     }
     
     /**
      * Get the set of inputs from the user.
-     * @return 
+     * @return
      */
     @Override
     public String[] getInputs() {
         
-        // Declare the array to have the number of elements you intend to get 
-        // from the user.
-        String[] inputs = new String[1];
+        // this view is not interactive, all it does is show the game description
+        return null;
         
-        inputs[0] = getUserInput("Please make a selection:");
-        
-        // Repeat for each input you need, putting it into its proper slot in the array.
-        // Create a function for this to call
-        
-        return inputs;
     }
-    
     
     /**
      * Perform the action indicated by the user's input.
      * @param inputs
      * @return true if the view should repeat itself, and false if the view
-     * should exit and return to the previous view.
+     * should exit and return to previous view.
      */
     @Override
-    public boolean doAction(String[] inputs){
-        // Act on the user's input.
-        // This is a "dispatch" function that decides what
-        // other functions to call. You can use an if-, if-else,
-        // or switch statement.
-        
+    public boolean doAction(String[] inputs) {
+       
         // return false if you want this view to exit and return
         // to the view that called it.
-       switch (inputs[0].trim().toUpperCase()){
-            case "M":
-                moveLocations();
-                break;
-            case "E":
-                System.out.println("You are returning to the game menu.\n");
-                return false;
-        }
-        
-        return true;
-    }
 
-    // Define your action handlers here. These are the methods that your doAction()
-    // method will call based on the user's input. We don't want to do a lot of 
-    // complex game stuff in our doAction() method. It will get messy very quickly.
-    
-    
-    private boolean moveLocations(){
-        //NewLocationView view = new NewLocationView();
-        //view.displayView();
-        System.out.println("IMPLEMENTATION COMING SOON\n");
+        displayMap();
         return false;
     }
     
+    public void displayMap() {
+        System.out.println("The City of Aaron,");
+        System.out.println("The map of the city. Where do you want to go?");
+        System.out.println("*****************************");
+        
+        Map map = MapControl.createMap();    
+        Location[][] locations = map.getLocations();
+
+        for (int i = 0; i < locations.length; i++) {
+
+            for (int j = 0; j < locations[i].length; j++) {
+                System.out.printf("%5s", map.getLocations()[i][j].getMapSymbol());
+            }
+            System.out.println();
+        }
+        System.out.println("*******************************");
+        System.out.println("C - Ruler's Court");
+        System.out.println("G - Granary/Storehouse");
+        System.out.println("F - Field");
+        System.out.println("U - Undeveloped land");
+        System.out.println("V - Village");
+        System.out.println("R - River"); 
+        System.out.println("L - Lamanite lands");
+        System.out.println("T - Temple");
+        System.out.println("W - Watchtower\n");
+        
+        pause(3000);
+    }
+
 }

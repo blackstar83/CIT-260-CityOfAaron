@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class Map implements Serializable {
 
     private Location[][] locations = new Location[5][5];
-    private Point currentLocation = new Point();
+    private Point currentLocation;
 
     public Map() {
     }
@@ -31,9 +31,8 @@ public class Map implements Serializable {
     public Point getcurrentLocation() {
         return currentLocation;
     }
-
-    public void setPoint(Point currentLocation) {
-        this.currentLocation = currentLocation;
+    
+    public void setCurrentLocation(Point point) {
     }
 
     @Override
@@ -42,8 +41,5 @@ public class Map implements Serializable {
                 + "Location=" + Arrays.toString(locations)
                 + ", Point=" + currentLocation
                 + " }";
-    }
-
-    public void setCurrentLocation(Point point) {
     }
 }

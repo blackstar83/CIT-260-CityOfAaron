@@ -39,7 +39,7 @@ public class BuyLandView extends ViewBase {
         // from the user.
         String[] inputs = new String[1];
 
-        inputs[0] = getUserInput("Change this text to prompt the user for the input.");
+        inputs[0] = getUserInput("Buying Land.");
 
         // Repeat for each input you need, putting it into its proper slot in the array.
         return inputs;
@@ -66,6 +66,6 @@ public class BuyLandView extends ViewBase {
     }
 
     private void buyLand() {
-        System.out.println("*** buyLand() called. Implementation coming soon.\n");
+        System.out.println(" Implementation coming soon.\n");
     }
 }

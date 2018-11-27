@@ -66,7 +66,7 @@ public class StartProgamView extends ViewBase {
     // method will call based on the user's input. We don't want to do a lot of 
     // complex game stuff in our doAction() method. It will get messy very quickly.
     private void startMainMenuView() {
-        pause(2000);
+        pause(3000);
         View mainMenu = new MainMenuView();
         mainMenu.displayView();
     }

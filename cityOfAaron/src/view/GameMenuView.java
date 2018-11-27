@@ -89,10 +89,11 @@ public class GameMenuView extends ViewBase {
             //display the annual report 
             getAnnualReport();
           
+
             if (GameControl.gameShouldEnd(0)) {
-               
                 System.out.println("Most of your people are dead!! Try again.");
                 return;
+                
             } else if (GameControl.gameMatures(1)) {
                 //TODO when fully implemented, this will contain currentYear variable from annual report.
                 //TODO create end of game report showing total game statistics. Use Annual Report format but bring in stats from every year.
@@ -119,15 +120,15 @@ public class GameMenuView extends ViewBase {
 
     private void newLocationView() {
 
-        NewLocationView view = new NewLocationView();
-        view.displayView();
+        View newLocationView = new NewLocationView();
+        newLocationView.displayView();
         //System.out.println("*** newLocationView() called. Implementation coming soon.");
     }
 
     private void manageCropsView() {
 
-        ManageCropsView view = new ManageCropsView();
-        view.displayView();
+        View manageCropsMenu = new ManageCropsView();
+        manageCropsMenu.displayView();
         //System.out.println("*** manageCropsView() called. Implementation coming soon.");
     }
 
@@ -135,20 +136,19 @@ public class GameMenuView extends ViewBase {
 
         //LiveYearView view = new LiveYearView();
         //view.displayView();
-        System.out.println("*** liveYearView() called. Implementation coming soon.");
+        System.out.println(" Implementation coming soon.");
     }
 
     private void reportsMenuView() {
-
-        ReportsMenuView view = new ReportsMenuView();
-        view.displayView();
+        ReportsMenuView reportsMenu = new ReportsMenuView();
+        reportsMenu.displayView();
         //System.out.println("*** reportsMenuView() called. Implementation coming soon.");
     }
 
     private void saveGameView() {
 
-        SaveGameView view = new SaveGameView();
-        view.displayView();
+        SaveGameView saveGame = new SaveGameView();
+        saveGame.displayView();
         //System.out.println("*** saveGameView() called. Implementation coming soon.");
     }
 

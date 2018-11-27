@@ -24,7 +24,7 @@ public class StorehouseControl {
         tools[1] = new InventoryItem(ItemType.Tool, 210, Condition.Good, "Shovels");
         tools[2] = new InventoryItem(ItemType.Tool, 300, Condition.Good, "Hammers");
         tools[3] = new InventoryItem(ItemType.Tool, 250, Condition.Good, "Saws");
-        tools[4] = new InventoryItem(ItemType.Tool, 180, Condition.Good, "Hoes");
+        tools[4] = new InventoryItem(ItemType.Tool, 220, Condition.Good, "Mattocks");
 
         return tools;
     }

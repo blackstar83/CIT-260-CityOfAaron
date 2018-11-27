@@ -19,7 +19,9 @@ public class Point implements Serializable {
     public Point() {
     }
 
-    public Point(int i, int i0) {
+    public Point(int row, int column) {
+        this.row = row;
+        this.column = column;
     }
 
     public void setRow(int row) {
