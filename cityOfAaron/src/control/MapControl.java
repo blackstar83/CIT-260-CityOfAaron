@@ -6,6 +6,10 @@
 package control;
 
 import model.*;
+import cityofaaron.CityOfAaron;
+import exceptions.MapControlException;
+
+
 
 /**
  *
@@ -61,4 +65,13 @@ public class MapControl {
         map.setCurrentLocation(point);
         return map;
     }
-}
+public static void checkNewLocation(int column, int row) throws MapControlException {
+    Map map = CityOfAaron.getCurrentGame().getTheMap();
+    Location[][] locations = map.getLocations();
+    if (column < 0 || row < 0) {
+        throw new MapControlException("\n Enter Positive Numbers Only.\n");
+    }else if (row >= locations.length || column >= locations[0].length) {
+                throw new MapControlException("\n Enter a Number not Greater than 5.\n");
+               }    
+    }
+}    
