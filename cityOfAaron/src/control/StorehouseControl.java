@@ -5,6 +5,8 @@
  */
 package control;
 
+import cityofaaron.CityOfAaron;
+import exceptions.StorehouseControlException;
 import model.*;
 
 /**
@@ -53,5 +55,14 @@ public class StorehouseControl {
         provisions[5] = new Provision(ItemType.Provisions, 5, Condition.Good, "Food", false);
 
         return provisions;
+    }
+
+    public static void checkReportsMenuView() throws StorehouseControlException {
+        Storehouse storehouse = CityOfAaron.getCurrentGame().getTheStorehouse();
+        Animal[][] animals = storehouse.getAnimals();
+        if (i < 0 || i > )
+    
+
+ 
     }
 }
