@@ -59,10 +59,7 @@ public class StorehouseControl {
 
     public static void checkReportsMenuView() throws StorehouseControlException {
         Storehouse storehouse = CityOfAaron.getCurrentGame().getTheStorehouse();
-        Animal[][] animals = storehouse.getAnimals();
-        if (i < 0 || i > )
-    
 
- 
+        // Unfinished Exception....
     }
 }

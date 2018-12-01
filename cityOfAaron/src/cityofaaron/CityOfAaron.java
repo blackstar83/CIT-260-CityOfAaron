@@ -31,9 +31,16 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
 
-        StartProgamView startProgramView = new StartProgamView();
-        startProgramView.displayView();
+        try {
+            View startProgramView = new StartProgamView();
+            startProgramView.displayView();
 
+        } catch (Throwable te) {
+
+            System.out.println("Exception Handling Error");
+            System.out.print(te.getMessage());
+            te.printStackTrace();
+            System.exit(0);
+        }
     }
-
 }

@@ -9,7 +9,7 @@ package exceptions;
  *
  * @author gj3593
  */
-public class StorehouseControlException {
+public class StorehouseControlException extends Exception {
 
     public StorehouseControlException() {
         //empty
