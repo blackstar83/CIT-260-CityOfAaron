@@ -90,8 +90,9 @@ public class ManageCropsView extends ViewBase {
     }
 
     private void feedThePeopleView() {
-        FeedThePeopleView view = new FeedThePeopleView();
-        view.displayView();
+        View feedThePeopleView = new FeedThePeopleView();
+        feedThePeopleView.displayView();
+        //view.displayView();
         //System.out.println("*** sellLandView() called. Implementation coming soon.");
     }
 
