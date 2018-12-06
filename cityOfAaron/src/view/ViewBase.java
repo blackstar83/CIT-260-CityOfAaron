@@ -1,12 +1,21 @@
 package view;
 
 import java.util.Scanner;
+import cityofaaron.CityOfAaron;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
  * @author gj3593
  */
 public abstract class ViewBase implements View {
+
+    private String message;
+
+    protected final BufferedReader keyboard = CityOfAaron.getInFile();
+    protected final PrintWriter console = CityOfAaron.getOutFile();
 
     //constructor
     public ViewBase() {
@@ -64,9 +73,11 @@ public abstract class ViewBase implements View {
      * a return key)
      * @return
      */
-    protected String getUserInput(String prompt, boolean allowEmpty) {
+    protected String getUserInput(String prompt, boolean allowEmpty) throws IOException {
 
-        Scanner keyboard = new Scanner(System.in);
+       // Scanner keyboard = new Scanner(System.in);
+       String selection = null;
+       selection = this.keyboard.readLine();
         String input = "";
         boolean inputReceived = false;
 
@@ -98,7 +109,7 @@ public abstract class ViewBase implements View {
      * @param prompt
      * @return
      */
-    protected String getUserInput(String prompt) {
+    protected String getUserInput(String prompt) throws IOException {
         return getUserInput(prompt, false);
     }
 

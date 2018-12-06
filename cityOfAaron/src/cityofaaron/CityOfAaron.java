@@ -14,6 +14,7 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import model.*;
 
 /**
  *
@@ -46,7 +47,7 @@ public class CityOfAaron {
         CityOfAaron.inFile = inFile;
     }
     //public static Game currentGame = null;
-    //public static Player player = null;
+    public static Player player = null;
 
     /**
      * @param args the command line arguments
@@ -79,7 +80,7 @@ public class CityOfAaron {
     }
     }
     }
-    //@Override
+    /*@Override
     public String getInput() {
         boolean valid = false;
         String selection = null;
@@ -97,5 +98,5 @@ public class CityOfAaron {
             System.out.println("Error reading input: " + e.getMessage());
         }
         return selection;
-    }
+    }*/
 }
