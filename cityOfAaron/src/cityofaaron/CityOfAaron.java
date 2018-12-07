@@ -24,6 +24,8 @@ public class CityOfAaron {
 
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
+    private static PrintWriter logFile = null;
+    
 
     // Keep copy of the current Game object in the main Class.
     //public static Game currentGame = null;
@@ -55,6 +57,14 @@ public class CityOfAaron {
     //public static Game currentGame = null;
     public static Player player = null;
 
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        CityOfAaron.logFile = logFile;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -82,28 +92,13 @@ public class CityOfAaron {
                 if (CityOfAaron.outFile != null) {
                     CityOfAaron.outFile.close();
                 }
+                if (CityOfAaron.logFile != null){
+                    CityOfAaron.logFile.close();
+                }
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
     }
-    /*@Override
-    public String getInput() {
-        boolean valid = false;
-        String selection = null;
-        try {
-            while(!valid) {
-               // selection = this.keyboard.readLine();
-                selection = selection.trim();
-            if(selection.length() < 1){
-                System.out.println("You must enter a value.");
-                continue;
-            }
-            break;
-            }
-        } catch(Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
-        }
-        return selection;
-    }*/
+    
 }

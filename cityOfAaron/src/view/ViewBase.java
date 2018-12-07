@@ -12,8 +12,6 @@ import java.io.PrintWriter;
  */
 public abstract class ViewBase implements View {
 
-    private String message;
-
     protected final BufferedReader keyboard = CityOfAaron.getInFile();
     protected final PrintWriter console = CityOfAaron.getOutFile();
 
@@ -73,16 +71,18 @@ public abstract class ViewBase implements View {
      * a return key)
      * @return
      */
-    protected String getUserInput(String prompt, boolean allowEmpty) throws IOException {
+    protected String getUserInput(String prompt, boolean allowEmpty) {
 
         // Scanner keyboard = new Scanner(System.in);
         String input = "";
         boolean inputReceived = false;
-
+        try {
+            
+       
         while (inputReceived == false) {
 
-            System.out.println(prompt);
-            input = keyboard.readLine();
+            this.console.println(prompt);
+            input = this.keyboard.readLine();
 
             // Make sure we avoid a null-pointer error.
             if (input == null) {
@@ -96,6 +96,9 @@ public abstract class ViewBase implements View {
                 inputReceived = true;
             }
         }
+        } catch(Exception e) {
+            ErrorView.display(ViewBase.class.getName(), "Error reading input:" + e.getMessage());
+        }
 
         return input;
     }
@@ -107,7 +110,7 @@ public abstract class ViewBase implements View {
      * @param prompt
      * @return
      */
-    protected String getUserInput(String prompt) throws IOException {
+    protected String getUserInput(String prompt) {
         return getUserInput(prompt, false);
     }
 
@@ -131,13 +134,10 @@ public abstract class ViewBase implements View {
 
         try {
             stringToNum = Integer.parseInt(inputs[0]);
-            if (stringToNum < 0) {
-                System.out.println("Please enter a positive number.");
-            } else {
-                inputValid = true;
-            }
+            inputValid = true;
+       
         } catch (NumberFormatException ex) {
-            System.out.println("Please enter a number.");
+             ErrorView.display(ViewBase.class.getName(), "Enter a number.");
         }
 
         return stringToNum;

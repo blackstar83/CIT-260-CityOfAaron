@@ -3,6 +3,7 @@ package view;
 import java.util.Scanner;
 import view.*;
 import control.GameControl;
+import exceptions.GameControlException;
 
 /**
  *
@@ -90,13 +91,13 @@ public class GameMenuView extends ViewBase {
             getAnnualReport();
 
             if (GameControl.gameShouldEnd(0)) {
-                System.out.println("Most of your people are dead!! Try again.");
+                this.console.println("Most of your people are dead!! Try again.");
                 return;
 
             } else if (GameControl.gameMatures(1)) {
                 //TODO when fully implemented, this will contain currentYear variable from annual report.
                 //TODO create end of game report showing total game statistics. Use Annual Report format but bring in stats from every year.
-                System.out.println("You Succeeded!! After 10 Years, your people are alive!!");
+                this.console.println("You Succeeded!! After 10 Years, your people are alive!!");
                 return;
             }
             // get message that should be displayed
@@ -153,7 +154,7 @@ public class GameMenuView extends ViewBase {
 
     private void getAnnualReport() {
 
-        System.out.println("Annual Report\n"
+        this.console.println("Annual Report\n"
                 + "----------------------\n"
                 + "The Year Number is 1.\n"
                 + "0 people starved.\n"
