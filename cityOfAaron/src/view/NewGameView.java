@@ -53,7 +53,7 @@ public class NewGameView extends ViewBase {
         //doing the action. Returning false will take us back
         //to the main menu.
         if (inputs[0] == null || inputs[0].equals("")) {
-            System.out.println("No player name entered. Returning to the Main menu...");
+            this.console.println("No player name entered. Returning to the Main menu...");
             return false;
         }
 
@@ -73,8 +73,8 @@ public class NewGameView extends ViewBase {
 
         CityOfAaron.setCurrentGame(game);
 
-        System.out.println();
-        System.out.println("Welcome: " + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n");
+        this.console.println();
+        this.console.println("Welcome: " + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n");
         //System.out.println("Welcome to the game, " + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n"
         //+ "The Current Annual Report will be displayed here.\n"
         //+ "\n"

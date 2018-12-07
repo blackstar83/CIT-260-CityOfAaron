@@ -66,10 +66,10 @@ public class NewLocationView extends ViewBase {
             inputInt = true;
             NewLocationView(row, column);
         } catch (NumberFormatException ex) {
-            System.out.println("Invalid number!! Enter numbers between 1-5.\n");
+            this.console.println("Invalid number!! Enter numbers between 1-5.\n");
 
         } catch (MapControlException mce) {
-            System.out.println(mce.getMessage());
+            this.console.println(mce.getMessage());
         }
 
         return true;
@@ -81,7 +81,7 @@ public class NewLocationView extends ViewBase {
         point.setColumn(column);
 
         // stub because this is not done yet
-        System.out.println("Implementation coming soon.\n");
+        this.console.println("Implementation coming soon.\n");
         // TODO send back to the game menu- so we do not have a loop   
 
         GameMenuView gameMenu = new GameMenuView();

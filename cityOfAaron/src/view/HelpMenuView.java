@@ -3,6 +3,7 @@ package view;
 import java.util.Scanner;
 import view.*;
 
+
 /**
  *
  * @author gj3593
@@ -55,7 +56,7 @@ public class HelpMenuView extends ViewBase {
 
         switch (inputs[0].trim().toUpperCase()) {
             case "A":
-                System.out.println("You will assume the role of the leader over the city of Aaron. Wheat is the\n"
+                this.console.println("You will assume the role of the leader over the city of Aaron. Wheat is the\n"
                         + "staff of life, and is used as the main currency in the city. As ruler over the city, the your task\n"
                         + "is to manage the village’s wheat crops so that the people of the village can be adequately fed,\n"
                         + "while dealing with rats, and random crop yields. The city is blessed when the people pay their\n"
@@ -63,20 +64,20 @@ public class HelpMenuView extends ViewBase {
                         + "many people die during the your term of office, you will be removed from office and the game ends.");
                 break;
             case "B":
-                System.out.println("The City Of Aaron is in vicinity of Ammonihah, near cities of Moroni and Nephihah.");
+                this.console.println("The City Of Aaron is in vicinity of Ammonihah, near cities of Moroni and Nephihah.");
                 break;
             case "C":
-                System.out.println("The Map can be accessed in the Game Menu by selecting View The Map.\n"
+                this.console.println("The Map can be accessed in the Game Menu by selecting View The Map.\n"
                         + "The map will contain a 2-dimensional array of locations.\n"
                         + "Each location has a name, a description of what you can see at this location");
                 break;
             case "D":
-                System.out.println("To move to a new location go to the Game Menu and select Move To A New Location\n"
+                this.console.println("To move to a new location go to the Game Menu and select Move To A New Location\n"
                         + "You will be prompted to enter the coordinates of the location on the map that you want to\n"
                         + "move to.");
                 break;
             case "E":
-                System.out.println("A list of animals, provisions and tools in the city storehouse can be viewed in the\n "
+                this.console.println("A list of animals, provisions and tools in the city storehouse can be viewed in the\n "
                         + "Reports Menu by selecting View The Provisions In The Storehouse.\n");
                 break;
             case "F":
