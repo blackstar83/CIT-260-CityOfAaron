@@ -60,7 +60,7 @@ public class ReportsMenuView extends ViewBase {
                 author();
                 break;
             case "Q":
-                System.out.println("Back to Reports Menu...");
+                this.console.println("Back to Reports Menu...");
                 return false;
         }
 
@@ -72,64 +72,65 @@ public class ReportsMenuView extends ViewBase {
     // method will call based on the user's input. We don't want to do a lot of 
     // complex game stuff in our doAction() method. It will get messy very quickly.
     private boolean animalsInStorehouse() {
-        System.out.println("These are the available animals in the storehouse.");
+
+        this.console.println("These are the available animals in the storehouse.");
         Game game = CityOfAaron.getCurrentGame();
         Storehouse storehouse = game.getTheStorehouse();
         Animal[] animals = storehouse.getAnimals();
 
         if (animals == null) {
-            System.out.println("No animals available.");
+            this.console.println("No animals available.");
         } else {
             String animalName;
             int animalCount;
             for (int i = 0; i < animals.length; i++) {
                 animalName = animals[i].getName();
                 animalCount = animals[i].getQuantity();
-                System.out.println(animalCount + " " + animalName);
+                this.console.println(animalCount + " " + animalName);
             }
             long total = 0;
             for (Animal animal : animals) {
                 animalCount = animal.getQuantity();
                 total += animalCount;
             }
-            System.out.println("There is a total of " + total + "animals in the Storehouse.");
+            this.console.println("There is a total of " + total + "animals in the Storehouse.");
         }
         return true;
     }
 
     private void toolsInStorehouse() {
-        System.out.println("These are the available tools for you to use.");
+        this.console.println("These are the available tools for you to use.");
         Game game = CityOfAaron.getCurrentGame();
         Storehouse storehouse = game.getTheStorehouse();
         InventoryItem[] tools = storehouse.getTools();
 
         if (tools == null) {
-            System.out.println("No tools available.");
+            this.console.println("No tools available.");
         } else {
             String toolName;
             int toolCount;
             for (int i = 0; i < tools.length; i++) {
                 toolName = tools[i].getName();
                 toolCount = tools[i].getQuantity();
-                System.out.println(toolCount + " " + toolName);
+                this.console.println(toolCount + " " + toolName);
             }
             long total = 0;
             for (InventoryItem tool : tools) {
                 toolCount = tool.getQuantity();
                 total += toolCount;
             }
-            System.out.println("There is a total of " + total + " tools in the Storehouse.");
+            this.console.println("There is a total of " + total + " tools in the Storehouse.");
         }
 
     }
 
     private boolean provisionsInStorehouse() {
-        System.out.println("Provisons in Storehouse coming soon!");
+        this.console.println("Provisons in Storehouse coming soon!");
         return true;
     }
 
     private boolean author() {
-        System.out.println("Created by");
+        this.console.println("Created by");
         return true;
     }
 

@@ -56,13 +56,13 @@ public class SellLandView extends ViewBase {
                 sellLand();
                 break;
             case "E":
-                System.out.println("You are now exiting the buy land option.");
+                this.console.println("You are now exiting the buy land option.");
                 return false;
         }
         return true;
     }
 
     private void sellLand() {
-        System.out.println(" Implementation coming soon.\n");
+        this.console.println(" Implementation coming soon.\n");
     }
 }

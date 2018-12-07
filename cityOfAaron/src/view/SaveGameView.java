@@ -51,7 +51,7 @@ public class SaveGameView extends ViewBase {
                 saveGame();
                 break;
             case "Q":
-                System.out.println("Success Game Saved. Good-bye.");
+                this.console.println("Success Game Saved. Good-bye.");
                 return false;
         }
 
@@ -70,19 +70,19 @@ public class SaveGameView extends ViewBase {
 
             outFile.flush();
         } catch (IOException ex1) {
-            System.out.println("Error saving Players to file");
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex1.getMessage());
         } finally {
             if (outFile != null) {
                 try {
                     outFile.close();
                 } catch (IOException ex2) {
-                    System.out.println("Error closing file");
+                    ErrorView.display(this.getClass().getName(),
+                            "Error reading input: " + ex2.getMessage());
                 }
             }
         }
-        // NewGameView view = new NewGameView();
-        //view.displayView();
-        //System.out.println("Success your game has been saved.");
+
     }
 
 }
