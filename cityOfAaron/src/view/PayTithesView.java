@@ -50,10 +50,7 @@ public class PayTithesView extends ViewBase {
     @Override
     public boolean doAction(String[] inputs) {
 
-        //someActionHandler();
-        //System.out.println("Implementation coming soon, back to the Manage Crops Menu!!");
-        //coming soon. This will be changed back to true
-        //return false;
+        
         int tithes = 0;
         boolean inputValid = false;
 

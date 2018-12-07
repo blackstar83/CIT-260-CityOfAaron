@@ -104,7 +104,7 @@ public class GameMenuView extends ViewBase {
             // only print if it is non-null
             String message = getMessage();
             if (message != null) {
-                System.out.println(getMessage());
+                this.console.println(getMessage());
             }
             String[] inputs = getInputs();
             keepGoing = doAction(inputs);

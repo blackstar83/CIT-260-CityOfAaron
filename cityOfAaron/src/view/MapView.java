@@ -66,7 +66,7 @@ public class MapView extends ViewBase {
             for (int j = 0; j < locations[i].length; j++) {
                 this.console.printf("%5s", map.getLocations()[i][j].getMapSymbol());
             }
-            System.out.println();
+            this.console.println();
         }
         this.console.println("*******************************");
         this.console.println("C - Ruler's Court");
