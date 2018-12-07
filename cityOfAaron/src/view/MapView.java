@@ -54,9 +54,9 @@ public class MapView extends ViewBase {
     }
 
     public void displayMap() {
-        System.out.println("The City of Aaron,");
-        System.out.println("The map of the city. Where do you want to go?");
-        System.out.println("*****************************");
+        this.console.println("The City of Aaron,");
+        this.console.println("The map of the city. Where do you want to go?");
+        this.console.println("*****************************");
 
         Map map = MapControl.createMap();
         Location[][] locations = map.getLocations();
@@ -68,16 +68,16 @@ public class MapView extends ViewBase {
             }
             System.out.println();
         }
-        System.out.println("*******************************");
-        System.out.println("C - Ruler's Court");
-        System.out.println("G - Granary/Storehouse");
-        System.out.println("F - Field");
-        System.out.println("U - Undeveloped land");
-        System.out.println("V - Village");
-        System.out.println("R - River");
-        System.out.println("L - Lamanite lands");
-        System.out.println("T - Temple");
-        System.out.println("W - Watchtower\n");
+        this.console.println("*******************************");
+        this.console.println("C - Ruler's Court");
+        this.console.println("G - Granary/Storehouse");
+        this.console.println("F - Field");
+        this.console.println("U - Undeveloped land");
+        this.console.println("V - Village");
+        this.console.println("R - River");
+        this.console.println("L - Lamanite lands");
+        this.console.println("T - Temple");
+        this.console.println("W - Watchtower\n");
 
         pause(3000);
     }
