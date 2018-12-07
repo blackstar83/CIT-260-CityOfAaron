@@ -21,28 +21,34 @@ import model.*;
  * @author gj3593
  */
 public class CityOfAaron {
+
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
-    
+
     // Keep copy of the current Game object in the main Class.
     //public static Game currentGame = null;
-    public static PrintWriter getOutFile(){
+    public static PrintWriter getOutFile() {
         return outFile;
     }
+
     public static void setOutFile(PrintWriter outFile) {
         CityOfAaron.outFile = outFile;
     }
-    
+
     public static Game currentGame = null;
+
     public static Game getCurrentGame() {
         return currentGame;
     }
+
     public static void setCurrentGame(Game game) {
         currentGame = game;
     }
+
     public static BufferedReader getInFile() {
         return inFile;
     }
+
     public static void setInFile(BufferedReader inFile) {
         CityOfAaron.inFile = inFile;
     }
@@ -55,30 +61,31 @@ public class CityOfAaron {
     public static void main(String[] args) {
 
         try {
-            CityOfAaron.inFile =
-                    new BufferedReader(new InputStreamReader(System.in));
+            CityOfAaron.inFile
+                    = new BufferedReader(new InputStreamReader(System.in));
             CityOfAaron.outFile = new PrintWriter(System.out, true);
             StartProgamView startProgamView = new StartProgamView();
             startProgamView.displayView();
 
         } catch (Throwable e) {
 
-            System.out.println("Exception: " + e.toString() +
-                                "\nCause: " + e.getCause() +
-                                "\nMessage: " + e.getMessage()
+            System.out.println("Exception: " + e.toString()
+                    + "\nCause: " + e.getCause()
+                    + "\nMessage: " + e.getMessage()
             );
             e.printStackTrace();;
-        }
-        finally {
+        } finally {
             try {
-            if (CityOfAaron.inFile != null)
-                CityOfAaron.inFile.close();
-            if (CityOfAaron.outFile != null)
-                CityOfAaron.outFile.close();
-        } catch (IOException ex) {
+                if (CityOfAaron.inFile != null) {
+                    CityOfAaron.inFile.close();
+                }
+                if (CityOfAaron.outFile != null) {
+                    CityOfAaron.outFile.close();
+                }
+            } catch (IOException ex) {
                 ex.printStackTrace();
-    }
-    }
+            }
+        }
     }
     /*@Override
     public String getInput() {

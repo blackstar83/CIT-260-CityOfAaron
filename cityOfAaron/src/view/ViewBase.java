@@ -75,16 +75,14 @@ public abstract class ViewBase implements View {
      */
     protected String getUserInput(String prompt, boolean allowEmpty) throws IOException {
 
-       // Scanner keyboard = new Scanner(System.in);
-       String selection = null;
-       selection = this.keyboard.readLine();
+        // Scanner keyboard = new Scanner(System.in);
         String input = "";
         boolean inputReceived = false;
 
         while (inputReceived == false) {
 
             System.out.println(prompt);
-            input = keyboard.nextLine();
+            input = keyboard.readLine();
 
             // Make sure we avoid a null-pointer error.
             if (input == null) {

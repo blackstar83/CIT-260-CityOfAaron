@@ -20,15 +20,15 @@ public class WheatControl {
         if (acresPlanted < 0) {
             throw new WheatControlException("Storage is empty");
         }
-            //return -1;
-            
+        //return -1;
+
         if (tithesPercent < 0 || tithesPercent > 100) {
             throw new WheatControlException("Tithes should be between 1-100. Try again!!");
         }
-            //return -2;
-            int high = 2;
-            int low = 1;
-            //if tithingPercent < 8 then low = 1, high = 3
+        //return -2;
+        int high = 2;
+        int low = 1;
+        //if tithingPercent < 8 then low = 1, high = 3
 
         if (tithesPercent < 8) {
             low = 1;
@@ -36,12 +36,12 @@ public class WheatControl {
         }
 
         //if (tithesPercent >= 8 && tithesPercent <= 12) {
-         if (tithesPercent >= 8 && tithesPercent <= 12) {
+        if (tithesPercent >= 8 && tithesPercent <= 12) {
             low = 2;
             high = 4;
         }
 
-          if (tithesPercent > 12) {
+        if (tithesPercent > 12) {
             low = 2;
             high = 5;
         }
@@ -49,11 +49,10 @@ public class WheatControl {
         int yield = 0;
 
         //try {
-          //  yield = GameControl.getRandomNumber(low, high);
+        //  yield = GameControl.getRandomNumber(low, high);
         //} catch (GameControlException ex) {
-          //  System.out.println(ex.getMessage());
+        //  System.out.println(ex.getMessage());
         //}
-
         return yield * acresPlanted;
     }
 
@@ -61,8 +60,7 @@ public class WheatControl {
         if (stringToNum < 0) {
             throw new WheatControlException("Positive numbers only.");
         }
-    }    
-    
+    }
 
     public static void checkTithing(int tithes) throws WheatControlException {
         if (tithes < 0) {

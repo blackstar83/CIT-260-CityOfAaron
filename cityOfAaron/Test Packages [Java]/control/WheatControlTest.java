@@ -50,8 +50,8 @@ public class WheatControlTest {
         int tithesPercent = 99;
         int acresPlanted = 1;
         int expResult = 1 + randomGenerator.nextInt(5);
-       // int result = WheatControl.caclculateHarvest(tithesPercent, acresPlanted);
-       // assertEquals(expResult, result);
+        // int result = WheatControl.caclculateHarvest(tithesPercent, acresPlanted);
+        // assertEquals(expResult, result);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class WheatControlTest {
         int acresPlanted = 2;
         int expResult = (1 + randomGenerator.nextInt(3)) * 2;
         //int result = WheatControl.caclculateHarvest(tithesPercent, acresPlanted);
-       // assertEquals(expResult, result);
+        // assertEquals(expResult, result);
     }
 
     @Test
@@ -72,7 +72,7 @@ public class WheatControlTest {
         int tithesPercent = 8;
         int acresPlanted = 4;
         int expResult = (2 + randomGenerator.nextInt(3)) * 4;
-      //  int result = WheatControl.caclculateHarvest(tithesPercent, acresPlanted);
-      //  assertEquals(expResult, result);
+        //  int result = WheatControl.caclculateHarvest(tithesPercent, acresPlanted);
+        //  assertEquals(expResult, result);
     }
 }

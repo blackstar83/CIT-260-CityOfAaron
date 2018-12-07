@@ -45,7 +45,7 @@ public class PeopleControlTest {
         int bushelsForFood = 4;
         int currentPopulation = 4;
         int expResult = 8;
-      //  int result = WheatControl.caclculateHarvest(bushelsForFood, currentPopulation);
+        //  int result = WheatControl.caclculateHarvest(bushelsForFood, currentPopulation);
         //assertEquals(expResult, result);
     }
 

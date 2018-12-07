@@ -31,7 +31,7 @@ public class PeopleControl {
             return 0;
         } else {
 
-        return currentPopulation - numberOfPeopleFed;
-    }
+            return currentPopulation - numberOfPeopleFed;
+        }
     }
 }

@@ -4,7 +4,6 @@ import java.io.FileWriter;
 import java.util.Scanner;
 import java.io.IOException;
 
-
 /**
  *
  * @author apere
@@ -65,21 +64,21 @@ public class SaveGameView extends ViewBase {
         String fileLocation = "players.txt";
         try {
             outFile = new FileWriter(fileLocation);
-            
+
             outFile.write("Arturo\n");
             outFile.write("Gleyn\n");
-            
+
             outFile.flush();
-        } catch(IOException ex1) {
+        } catch (IOException ex1) {
             System.out.println("Error saving Players to file");
-        }finally {
-                    if(outFile != null) {
-                    try {
+        } finally {
+            if (outFile != null) {
+                try {
                     outFile.close();
-                    } catch(IOException ex2) {
+                } catch (IOException ex2) {
                     System.out.println("Error closing file");
-                    }
-                    }
+                }
+            }
         }
         // NewGameView view = new NewGameView();
         //view.displayView();

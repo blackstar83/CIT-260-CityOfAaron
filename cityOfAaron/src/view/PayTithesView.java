@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package view;
+
 import exceptions.WheatControlException;
 import control.WheatControl;
 
@@ -53,13 +54,13 @@ public class PayTithesView extends ViewBase {
         //System.out.println("Implementation coming soon, back to the Manage Crops Menu!!");
         //coming soon. This will be changed back to true
         //return false;
-         int tithes = 0;
+        int tithes = 0;
         boolean inputValid = false;
 
         try {
             tithes = Integer.parseInt(inputs[0]);
             WheatControl.checkTithing(tithes);
-                inputValid = true;
+            inputValid = true;
         } catch (NumberFormatException ex) {
             System.out.println("Enter a number.");
         } catch (WheatControlException wce) {

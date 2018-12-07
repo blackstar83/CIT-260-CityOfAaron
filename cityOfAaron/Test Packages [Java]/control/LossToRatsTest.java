@@ -48,7 +48,7 @@ public class LossToRatsTest {
         int chanceOfRats = 0;
         int expResult = 0;
         //int result = WheatControl.caclculateHarvest(tithesPercent, wheatInStorage);
-       // assertEquals(expResult, result);
+        // assertEquals(expResult, result);
     }
 
 }
