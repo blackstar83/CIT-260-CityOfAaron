@@ -43,7 +43,7 @@ public class FeedThePeopleView extends ViewBase {
     public boolean doAction(String[] inputs) {
 
         someActionHandler();
-        System.out.println("Implementation coming soon, back to the Manage Crops Menu!!");
+        this.console.println("Implementation coming soon, back to the Manage Crops Menu!!");
         return false;
     }
 

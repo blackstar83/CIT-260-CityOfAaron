@@ -136,7 +136,7 @@ public class GameMenuView extends ViewBase {
 
         //LiveYearView view = new LiveYearView();
         //view.displayView();
-        System.out.println(" Implementation coming soon.");
+        this.console.println(" Implementation coming soon.");
     }
 
     private void reportsMenuView() {

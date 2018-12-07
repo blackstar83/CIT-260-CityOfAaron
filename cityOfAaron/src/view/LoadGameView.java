@@ -53,7 +53,7 @@ public class LoadGameView extends ViewBase {
                 loadSavedGame();
                 break;
             case "Q":
-                System.out.println("Exit Load Game. Good-bye.");
+                this.console.println("Exit Load Game. Good-bye.");
                 return false;
         }
 
@@ -67,12 +67,12 @@ public class LoadGameView extends ViewBase {
     private void loadNewGame() {
 
         LoadGameView view = new LoadGameView();
-        System.out.println(" Implementation coming soon.");
+        this.console.println(" Implementation coming soon.");
     }
 
     private void loadSavedGame() {
         //LoadGameView view = new LoadGameView();
         //view.displayView();
-        System.out.println("Implementation coming soon.");
+        this.console.println("Implementation coming soon.");
     }
 }

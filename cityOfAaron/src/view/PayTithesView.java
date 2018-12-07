@@ -62,9 +62,9 @@ public class PayTithesView extends ViewBase {
             WheatControl.checkTithing(tithes);
             inputValid = true;
         } catch (NumberFormatException ex) {
-            System.out.println("Enter a number.");
+            this.console.println("Enter a number.");
         } catch (WheatControlException wce) {
-            System.out.println(wce.getMessage());
+            this.console.println(wce.getMessage());
         }
 
         return !inputValid;
