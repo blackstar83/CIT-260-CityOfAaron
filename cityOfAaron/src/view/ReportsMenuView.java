@@ -18,7 +18,7 @@ public class ReportsMenuView extends ViewBase {
         return "Welcome to: Reports Menu.\n"
                 + "A - View the animals in the storehouse\n"
                 + "T - View the tools in the storehouse\n"
-                + "P - View the provisions in the storehouse\n"
+                + "P - Print provisions in the storehouse\n"
                 + "G - View the authors of this game\n"
                 + "Q - Back to Game Menu\n";
     }
@@ -54,7 +54,8 @@ public class ReportsMenuView extends ViewBase {
                 toolsInStorehouse();
                 break;
             case "P":
-                provisionsInStorehouse();
+                View reportOfProvisions = new ReportOfProvisions();
+                reportOfProvisions.displayView();
                 break;
             case "G":
                 author();
@@ -68,9 +69,6 @@ public class ReportsMenuView extends ViewBase {
 
     }
 
-    // Define your action handlers here. These are the methods that your doAction()
-    // method will call based on the user's input. We don't want to do a lot of 
-    // complex game stuff in our doAction() method. It will get messy very quickly.
     private boolean animalsInStorehouse() {
 
         this.console.println("These are the available animals in the storehouse.");
@@ -122,11 +120,6 @@ public class ReportsMenuView extends ViewBase {
             this.console.println("There is a total of " + total + " tools in the Storehouse.");
         }
 
-    }
-
-    private boolean provisionsInStorehouse() {
-        this.console.println("Provisons in Storehouse coming soon!");
-        return true;
     }
 
     private boolean author() {
