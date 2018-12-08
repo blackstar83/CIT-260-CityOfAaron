@@ -17,7 +17,7 @@ public class ReportsMenuView extends ViewBase {
     protected String getMessage() {
         return "Welcome to: Reports Menu.\n"
                 + "A - View the animals in the storehouse\n"
-                + "T - View the tools in the storehouse\n"
+                + "T - Printn the tools in the storehouse\n"
                 + "P - Print provisions in the storehouse\n"
                 + "G - View the authors of this game\n"
                 + "Q - Back to Game Menu\n";
@@ -51,7 +51,8 @@ public class ReportsMenuView extends ViewBase {
                 animalsInStorehouse();
                 break;
             case "T":
-                toolsInStorehouse();
+                View reportOfTools = new ReportOfTools();
+                reportOfTools.displayView();
                 break;
             case "P":
                 View reportOfProvisions = new ReportOfProvisions();
