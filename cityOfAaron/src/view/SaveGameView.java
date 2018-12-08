@@ -1,9 +1,10 @@
 package view;
 
-import java.io.FileWriter;
-import java.util.Scanner;
 import java.io.IOException;
-
+import cityofaaron.CityOfAaron;
+import exceptions.GameControlException;
+import model.Game;
+import control.GameControl;
 /**
  *
  * @author apere
@@ -16,9 +17,7 @@ public class SaveGameView extends ViewBase {
 
     @Override
     protected String getMessage() {
-        return "Save Game\n"
-                + " I - Save Game\n"
-                + " Q - Quit\n";
+        return "Saving Game!";
     }
 
     /**
@@ -42,47 +41,22 @@ public class SaveGameView extends ViewBase {
      * @return true if the view should repeat itself, and false if the view
      * should exit and return to the previous view.
      */
-    @Override
-    public boolean doAction(String[] inputs) {
-
-        switch (inputs[0].trim().toUpperCase()) {
-            // If option 1, call saveGame()
-            case "I":
-                saveGame();
-                break;
-            case "Q":
-                this.console.println("Success Game Saved. Good-bye.");
-                return false;
+     @Override
+    public boolean doAction(String[] inputs){
+        
+       String filePath = inputs[0];
+       Game game = CityOfAaron.getCurrentGame();
+       
+         try {
+           GameControl.saveGameToFile(game, filePath);
+       } catch(GameControlException gce) {
+           ErrorView.display(this.getClass().getName(), gce.getMessage());
+           return false;
+       } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), "I/O Error: " + ex.getMessage());
         }
-
-        return true;
+         this.console.println("Game has been saved as " + filePath);
+         return false;
+        }
     }
 
-    private void saveGame() {
-
-        FileWriter outFile = null;
-        String fileLocation = "players.txt";
-        try {
-            outFile = new FileWriter(fileLocation);
-
-            outFile.write("Arturo\n");
-            outFile.write("Gleyn\n");
-
-            outFile.flush();
-        } catch (IOException ex1) {
-            ErrorView.display(this.getClass().getName(),
-                    "Error reading input: " + ex1.getMessage());
-        } finally {
-            if (outFile != null) {
-                try {
-                    outFile.close();
-                } catch (IOException ex2) {
-                    ErrorView.display(this.getClass().getName(),
-                            "Error reading input: " + ex2.getMessage());
-                }
-            }
-        }
-
-    }
-
-}

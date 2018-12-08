@@ -5,42 +5,76 @@ import exceptions.GameControlException;
 
 public class WheatControl {
 
-    /**
-     * Calculate the amount of wheat harvested, based on the percentage of
-     * tithing paid. Assume that GameControl.getRandomNumber(low,high) is
-     * available to be called. private static int calculateHarvest(int
-     * tithesPercent int acresPlanted) {
-     *
-     * @param tithesPercent
-     * @param acresPlanted
-     * @return The random number
-     */
-    public static int caclculateHarvest(int tithesPercent, int acresPlanted) throws WheatControlException {
-        //int low = 0, high = 0;
-        if (acresPlanted < 0) {
-            throw new WheatControlException("Storage is empty");
+    public static int calculateLossToRats(int tithesPercent, int wheatInStorage) throws WheatControlException, GameControlException {
+       
+        if (wheatInStorage < 0) {
+            throw new WheatControlException("There is no wheat in storage.");
         }
-        //return -1;
 
         if (tithesPercent < 0 || tithesPercent > 100) {
-            throw new WheatControlException("Tithes should be between 1-100. Try again!!");
+            throw new WheatControlException("Tithing amount should be between 0-100.");
         }
-        //return -2;
+        
+        int chanceOfRats = GameControl.getRandomNumber(1, 100);
+
+        if (chanceOfRats >= 30) {
+            return 0;
+        }
+
         int high = 2;
         int low = 1;
-        //if tithingPercent < 8 then low = 1, high = 3
+ 
+        if (tithesPercent < 8) {
+            low = 6;
+            high = 10;
+        }
 
+        if (tithesPercent >= 8 && tithesPercent <= 12) {
+            low = 3;
+            high = 7;
+        }
+
+        if (tithesPercent > 12) {
+            low = 3;
+            high = 5;
+        }
+
+        int bushelsLost = 0;
+        
+        int lossToRats = GameControl.getRandomNumber(low, high);
+        double percentLost = lossToRats * 0.01;
+  
+        bushelsLost = (int) (wheatInStorage * percentLost);
+
+        return bushelsLost;
+    }
+
+    public static int calculateHarvest(int tithesPercent, int acresPlanted) throws WheatControlException, GameControlException {
+
+        if (acresPlanted < 0) {
+            throw new WheatControlException("There is no wheat in storage.");
+        }
+
+        if (tithesPercent < 0 || tithesPercent > 100) {
+            throw new WheatControlException("Tithing amount should be between 0-100.");
+        }
+
+        int high = 2;
+        int low = 1;
+
+        //if tithingPercent < 8 then low = 1, high = 3       
         if (tithesPercent < 8) {
             low = 1;
             high = 3;
         }
 
-        //if (tithesPercent >= 8 && tithesPercent <= 12) {
+        //if tithingPercent >= 8 AND tithingPercent <= 12 then low = 2, high = 4
         if (tithesPercent >= 8 && tithesPercent <= 12) {
             low = 2;
             high = 4;
         }
 
+        //if tithingPercent > 12 then low = 2, high = 5        
         if (tithesPercent > 12) {
             low = 2;
             high = 5;
@@ -48,26 +82,18 @@ public class WheatControl {
 
         int yield = 0;
 
-        //try {
-        //  yield = GameControl.getRandomNumber(low, high);
-        //} catch (GameControlException ex) {
-        //  System.out.println(ex.getMessage());
-        //}
+        yield = GameControl.getRandomNumber(low, high);
+
         return yield * acresPlanted;
     }
 
     public static void checkNumber(int stringToNum) throws WheatControlException {
         if (stringToNum < 0) {
-            throw new WheatControlException("Positive numbers only.");
+            throw new WheatControlException("Please enter a positive number.");
         }
     }
 
-    public static void checkTithing(int tithes) throws WheatControlException {
-        if (tithes < 0) {
-            throw new WheatControlException("Positive numbers only.");
-        } else if (tithes > 100) {
-            throw new WheatControlException("Enter a number lower than 100.");
-        }
+    public static boolean checkTithing(int tithes) {
+        return tithes >= 0 && tithes <= 100;
     }
-
 }

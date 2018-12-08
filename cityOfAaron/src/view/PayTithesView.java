@@ -56,15 +56,23 @@ public class PayTithesView extends ViewBase {
 
         try {
             tithes = Integer.parseInt(inputs[0]);
-            WheatControl.checkTithing(tithes);
+            if (WheatControl.checkTithing(tithes) == false) {
+                ErrorView.display(this.getClass().getName(), "Tithing value of "
+                        + tithes
+                        + " is invalid. It should be between 0 and 100.");
+                return true;
+            }
             inputValid = true;
+            saveTithes(tithes);
         } catch (NumberFormatException ex) {
-            this.console.println("Enter a number.");
-        } catch (WheatControlException wce) {
-            this.console.println(wce.getMessage());
+            ErrorView.display(this.getClass().getName(), "Please enter a number.");
         }
 
         return !inputValid;
+    }
+ private void saveTithes(int tithingPercent) {
+        //TODO stub function, to be completed after AnnualReport is implemented 
+        this.console.println("Saving tithing percent");
     }
 
 }

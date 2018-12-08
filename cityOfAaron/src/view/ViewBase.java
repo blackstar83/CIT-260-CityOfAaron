@@ -55,7 +55,7 @@ public abstract class ViewBase implements View {
             // only print if it is non-null
             String message = getMessage();
             if (message != null) {
-                System.out.println(getMessage());
+                this.console.println(getMessage());
             }
 
             String[] inputs = getInputs();

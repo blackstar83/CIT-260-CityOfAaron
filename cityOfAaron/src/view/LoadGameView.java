@@ -1,7 +1,9 @@
 package view;
 
 import java.util.Scanner;
-
+import control.GameControl;
+import exceptions.GameControlException;
+import java.io.IOException;
 /**
  *
  * @author apere
@@ -14,10 +16,7 @@ public class LoadGameView extends ViewBase {
 
     @Override
     protected String getMessage() {
-        return "Load Game\n"
-                + " N - Load New Game\n"
-                + " S - Load Saved Game\n"
-                + " Q - Quit\n";
+        return "Load Saved Game\n";
     }
 
     /**
@@ -29,7 +28,9 @@ public class LoadGameView extends ViewBase {
     public String[] getInputs() {
 
         String[] inputs = new String[1];
-        inputs[0] = getUserInput("Your Choice:");
+        inputs[0] = getUserInput("Your Choice:"
+         + "\t\t-OR-\n"
+         + "Press Enter to return to the Main Menu", true);
 
         return inputs;
     }
@@ -44,35 +45,21 @@ public class LoadGameView extends ViewBase {
     @Override
     public boolean doAction(String[] inputs) {
 
-        switch (inputs[0].trim().toUpperCase()) {
-            // If option 1, call loadGame()
-            case "N":
-                loadNewGame();
-                break;
-            case "S":
-                loadSavedGame();
-                break;
-            case "Q":
-                this.console.println("Exit Load Game. Good-bye.");
-                return false;
+        String filePath = inputs[0];
+
+        try {
+            GameControl.testInput(inputs);
+            GameControl.loadGameFromFile(filePath);
+        } catch (GameControlException ex) {
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+            return false;
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), "I/O Error: " + ex.getMessage());
         }
 
-        return true;
+        View gameMenu = new GameMenuView();
+        gameMenu.displayView();
+
+        return false;
     }
-
-    /* public void loadGameMenu() {
-        boolean keepGoing = true;
-
-    }*/
-    private void loadNewGame() {
-
-        LoadGameView view = new LoadGameView();
-        this.console.println(" Implementation coming soon.");
     }
-
-    private void loadSavedGame() {
-        //LoadGameView view = new LoadGameView();
-        //view.displayView();
-        this.console.println("Implementation coming soon.");
-    }
-}

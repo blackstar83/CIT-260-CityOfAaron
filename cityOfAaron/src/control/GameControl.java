@@ -2,6 +2,8 @@ package control;
 
 import java.util.Random;
 import model.*;
+import exceptions.GameControlException;
+import java.io.*;
 import cityofaaron.CityOfAaron;
 
 public class GameControl {
@@ -13,34 +15,47 @@ public class GameControl {
         randomGenerator = random;
     }
 
-    public static int getRandomNumber(int min, int max) {
-
+     public static int getRandomNumber(int min, int max) throws GameControlException {
         if (min < 0 || max < 0) {
-            return -1;
+            throw new GameControlException("Enter a number greater than zero.");
         }
-        //return -2
+        
         if (max <= min) {
-            return -2;
+            throw new GameControlException("The max number must be greater than the min number.");
         }
-
-        // return -3
+        
         if (max == Integer.MAX_VALUE) {
-            return -3;
+            throw new GameControlException("The max number cannot be the maximum value for integers.");
         }
 
         int range = (max - min) + 1;
-
+        
         return min + randomGenerator.nextInt(range);
-
     }
 
-    public static String loadGameFromFile(String filename) {
 
-        String name = filename;
+    public static Game loadGameFromFile(String filePath) throws GameControlException, IOException {
 
-        return name;
+        if (filePath == null) {
+            throw new GameControlException("Enter a valid file path.");
+        }
 
+        Game game = null;
+
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePath))) {
+            game = (Game)in.readObject();
+        } catch (IOException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+
+        CityOfAaron.setCurrentGame(game);
+        Player player = new Player();
+        game.getThePlayer();
+        game.setThePlayer(player);
+
+        return game;
     }
+
 
     public static boolean gameShouldEnd(int mortalityRate) {
 
@@ -57,8 +72,16 @@ public class GameControl {
         return false;
     }
 
-    public static void saveGameToFile(Game game, String filename) {
+    public static void saveGameToFile(Game game, String filePath) throws GameControlException, IOException {
 
+        if (filePath == null) {
+            throw new GameControlException("Enter a valid file path.");
+        }
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))) {
+            out.writeObject(game);
+        } catch (IOException ex) {
+            throw new IOException("I/O Error: " + ex.getMessage());
+        }
     }
 
     public static void saveReportToFile(String[] filename) {
@@ -102,5 +125,11 @@ public class GameControl {
 
         return game;
 
+    }
+     public static void testInput(String[] inputs) throws GameControlException {
+
+        if (inputs[0] == null || inputs[0].equals("")) {
+            throw new GameControlException("No name entered; returning to the Main Menu.");
+        }
     }
 }

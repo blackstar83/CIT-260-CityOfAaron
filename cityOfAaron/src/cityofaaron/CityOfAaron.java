@@ -8,7 +8,8 @@ package cityofaaron;
 
 import java.io.BufferedReader;
 import model.Game;
-import view.*;
+import view.View;
+import view.StartProgamView;
 import java.io.IOException;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
@@ -71,19 +72,15 @@ public class CityOfAaron {
     public static void main(String[] args) {
 
         try {
-            CityOfAaron.inFile
-                    = new BufferedReader(new InputStreamReader(System.in));
-            CityOfAaron.outFile = new PrintWriter(System.out, true);
-            StartProgamView startProgamView = new StartProgamView();
-            startProgamView.displayView();
+            inFile = new BufferedReader(new InputStreamReader(System.in));
+            outFile = new PrintWriter(System.out, true);
+            logFile = new PrintWriter("logFile.txt");
 
-        } catch (Throwable e) {
-
-            System.out.println("Exception: " + e.toString()
-                    + "\nCause: " + e.getCause()
-                    + "\nMessage: " + e.getMessage()
-            );
-            e.printStackTrace();;
+            View startProgramView = new StartProgamView();
+            startProgramView.displayView();
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
         } finally {
             try {
                 if (CityOfAaron.inFile != null) {
@@ -96,9 +93,10 @@ public class CityOfAaron {
                     CityOfAaron.logFile.close();
                 }
             } catch (IOException ex) {
-                ex.printStackTrace();
+                System.out.println("Error Closing File: " + ex.getMessage());
             }
         }
+
     }
-    
+
 }

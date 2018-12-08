@@ -66,10 +66,10 @@ public class NewLocationView extends ViewBase {
             inputInt = true;
             NewLocationView(row, column);
         } catch (NumberFormatException ex) {
-            this.console.println("Invalid number!! Enter numbers between 1-5.\n");
+             ErrorView.display(this.getClass().getName(), "Enter a number.");
 
         } catch (MapControlException mce) {
-            this.console.println(mce.getMessage());
+            ErrorView.display(this.getClass().getName(), mce.getMessage());
         }
 
         return true;
