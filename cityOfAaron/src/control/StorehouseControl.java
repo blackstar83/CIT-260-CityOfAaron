@@ -46,20 +46,30 @@ public class StorehouseControl {
 
     public static Provision[] createProvisions() {
         Provision[] provisions = new Provision[6];
-
+        Provision provision = new Provision();
+        
         provisions[0] = new Provision(ItemType.Provisions, 9, Condition.Good, "Soap", true);
         provisions[1] = new Provision(ItemType.Provisions, 1, Condition.Poor, "Pitcher/Water", false);
         provisions[2] = new Provision(ItemType.Provisions, 3, Condition.Good, "Tent", false);
         provisions[3] = new Provision(ItemType.Provisions, 8, Condition.Fair, "Clothes", false);
         provisions[4] = new Provision(ItemType.Provisions, 4, Condition.Good, "Coat", false);
         provisions[5] = new Provision(ItemType.Provisions, 5, Condition.Good, "Food", false);
-
+        
+        provision.setProvisions(provisions);
         return provisions;
     }
 
-    public static void checkReportsMenuView() throws StorehouseControlException {
-        Storehouse storehouse = CityOfAaron.getCurrentGame().getTheStorehouse();
+    //public static void checkReportsMenuView() throws StorehouseControlException {
+    //    Storehouse storehouse = CityOfAaron.getCurrentGame().getTheStorehouse();
 
-        // Unfinished Exception....
+    public static void checkReportsMenuView(int column, int row) throws StorehouseControlException {
+        Storehouse storehouse = CityOfAaron.getCurrentGame().getTheStorehouse();
+        Provision provision = new Provision();
+        Provision[] provisions = provision.getProvisions();
+        if (column < 0 || row < 0) {
+            throw new StorehouseControlException("\n Enter Positive Numbers Only.\n");
+        } else if (row >= provisions.length) {
+            throw new StorehouseControlException("\n Enter a Number not Greater than 5.\n");
+        }
     }
 }

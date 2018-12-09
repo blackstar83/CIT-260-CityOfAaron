@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class Provision extends InventoryItem implements Serializable {
 
     private Boolean perishable;
-
+    private Provision[] provisions;
     public Provision() {
         //Empty constructor for JavaBeans
     }
@@ -26,7 +26,15 @@ public class Provision extends InventoryItem implements Serializable {
         setName(name);
         setPerishable(perishable);
     }
-
+    public Provision[] getProvisions() {
+        
+        return provisions;
+    }
+    public void setProvisions(Provision[] provisions){
+        this.provisions = provisions;
+    }
+    
+    
     public Boolean getPerishable() {
         return perishable;
     }

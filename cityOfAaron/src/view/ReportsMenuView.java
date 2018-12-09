@@ -19,6 +19,7 @@ public class ReportsMenuView extends ViewBase {
                 + "A - View the animals in the storehouse\n"
                 + "T - Printn the tools in the storehouse\n"
                 + "P - Print provisions in the storehouse\n"
+                + "B - Print list of animals in the storehouse\n"
                 + "G - View the authors of this game\n"
                 + "Q - Back to Game Menu\n";
     }
@@ -58,6 +59,9 @@ public class ReportsMenuView extends ViewBase {
                 View reportOfProvisions = new ReportOfProvisions();
                 reportOfProvisions.displayView();
                 break;
+            case "B":
+                View ReportAnimalList = new ReportAnimalList();
+                ReportAnimalList.displayView();
             case "G":
                 author();
                 break;
